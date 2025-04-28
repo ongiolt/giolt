@@ -14,8 +14,7 @@
 		"docs:build": "bun run --filter 'docs' build",
 		"docs:dev": "bun run --filter 'docs' dev",
 		"docs:preview": "bun run --filter 'docs' preview",
-		"lint": "biome lint --write .",
-		"format": "biome format --write ."
+		"check": "biome check --write . && bun run --filter 'docs' astro check && bun run --filter 'frontend' astro check"
 	},
 	"workspaces": ["packages/*"]
 }
