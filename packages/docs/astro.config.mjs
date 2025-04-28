@@ -6,7 +6,7 @@ import starlight from "@astrojs/starlight";
 export default defineConfig({
 	output: "static",
 	server: {
-		port: 3000
+		port: 3000,
 	},
 	integrations: [
 		starlight({
