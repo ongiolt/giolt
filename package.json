@@ -10,6 +10,10 @@
 	"scripts": {
 		"frontend:dev": "bun run --filter 'frontend' dev",
 		"frontend:build": "bun run --filter 'frontend' build",
+		"frontend:preview": "bun run --filter 'frontend' preview",
+		"docs:build": "bun run --filter 'docs' build",
+		"docs:dev": "bun run --filter 'docs' dev",
+		"docs:preview": "bun run --filter 'docs' preview",
 		"lint": "biome lint --write .",
 		"format": "biome format --write ."
 	},
