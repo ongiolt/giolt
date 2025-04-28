@@ -33,7 +33,7 @@
 	--size-field: 0.28125rem;
 	--border: 2px;
 	--depth: 1;
-	--noise: .5;
+	--noise: 0.5;
 }
 
 @plugin "daisyui/theme" {
@@ -69,4 +69,4 @@
 	--border: 2px;
 	--depth: 1;
 	--noise: 1;
-  }  
+}
