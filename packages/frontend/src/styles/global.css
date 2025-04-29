@@ -3,21 +3,21 @@
 
 @plugin "daisyui/theme" {
 	name: "dark";
-	default: false;
+	default: true;
 	prefersdark: true;
 	color-scheme: "dark";
-	--color-base-100: oklch(20% 0 0);
-	--color-base-200: oklch(26% 0 0);
-	--color-base-300: oklch(37% 0 0);
-	--color-base-content: oklch(98% 0.001 106.423);
-	--color-primary: oklch(98% 0 0);
-	--color-primary-content: oklch(20% 0 0);
-	--color-secondary: oklch(98% 0 0);
-	--color-secondary-content: oklch(20% 0 0);
-	--color-accent: oklch(43% 0 0);
+	--color-base-100: oklch(21% 0.006 285.885);
+	--color-base-200: oklch(27% 0.006 286.033);
+	--color-base-300: oklch(37% 0.013 285.805);
+	--color-base-content: oklch(98% 0 0);
+	--color-primary: oklch(96% 0.001 286.375);
+	--color-primary-content: oklch(21% 0.006 285.885);
+	--color-secondary: oklch(96% 0.001 286.375);
+	--color-secondary-content: oklch(21% 0.006 285.885);
+	--color-accent: oklch(44% 0.017 285.786);
 	--color-accent-content: oklch(98% 0 0);
-	--color-neutral: oklch(26% 0 0);
-	--color-neutral-content: oklch(98% 0 0);
+	--color-neutral: oklch(96% 0.001 286.375);
+	--color-neutral-content: oklch(21% 0.006 285.885);
 	--color-info: oklch(62% 0.214 259.815);
 	--color-info-content: oklch(97% 0.014 254.604);
 	--color-success: oklch(76% 0.233 130.85);
@@ -38,20 +38,20 @@
 
 @plugin "daisyui/theme" {
 	name: "light";
-	default: true;
+	default: false;
 	prefersdark: false;
 	color-scheme: "light";
-	--color-base-100: oklch(97% 0 0);
-	--color-base-200: oklch(92% 0 0);
-	--color-base-300: oklch(87% 0 0);
-	--color-base-content: oklch(20% 0 0);
-	--color-primary: oklch(20% 0 0);
+	--color-base-100: oklch(98% 0 0);
+	--color-base-200: oklch(96% 0.001 286.375);
+	--color-base-300: oklch(87% 0.006 286.286);
+	--color-base-content: oklch(21% 0.006 285.885);
+	--color-primary: oklch(21% 0.006 285.885);
 	--color-primary-content: oklch(98% 0 0);
-	--color-secondary: oklch(20% 0 0);
+	--color-secondary: oklch(21% 0.006 285.885);
 	--color-secondary-content: oklch(98% 0 0);
-	--color-accent: oklch(43% 0 0);
+	--color-accent: oklch(44% 0.017 285.786);
 	--color-accent-content: oklch(98% 0 0);
-	--color-neutral: oklch(20% 0 0);
+	--color-neutral: oklch(21% 0.006 285.885);
 	--color-neutral-content: oklch(98% 0 0);
 	--color-info: oklch(62% 0.214 259.815);
 	--color-info-content: oklch(97% 0.014 254.604);
@@ -70,3 +70,5 @@
 	--depth: 1;
 	--noise: 1;
 }
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
