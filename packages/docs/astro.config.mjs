@@ -11,10 +11,16 @@ export default defineConfig({
 	server: {
 		port: 3000,
 	},
+	site: "https://docs.giolt.com",
 
 	integrations: [
 		starlight({
 			title: "Giolt Docs",
+			favicon: "./src/assets/giolt-rounded.svg",
+			logo: {
+				light: "./src/assets/giolt-light.svg",
+				dark: "./src/assets/giolt-dark.svg",
+			},
 			sidebar: [
 				{
 					label: "About",
