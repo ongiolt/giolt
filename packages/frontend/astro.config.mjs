@@ -20,6 +20,6 @@ export default defineConfig({
 
 	integrations: [react()],
 	adapter: cloudflare({
-		imageService: "compile"
+		imageService: "compile",
 	}),
 });
