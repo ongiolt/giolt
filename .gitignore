@@ -4,3 +4,4 @@ dist
 .cache
 .astro
 .DS_Store
+.wrangler
