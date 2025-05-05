@@ -2,8 +2,8 @@
 import { defineConfig } from "astro/config";
 
 import react from "@astrojs/react";
-import tailwindcss from "@tailwindcss/vite";
 import clerk from "@clerk/astro";
+import tailwindcss from "@tailwindcss/vite";
 
 import cloudflare from "@astrojs/cloudflare";
 
@@ -26,13 +26,16 @@ export default defineConfig({
 		},
 	},
 
-	integrations: [react(), clerk({
-		enableEnvSchema: false
-	})],
+	integrations: [
+		react(),
+		clerk({
+			enableEnvSchema: false,
+		}),
+	],
 	adapter: cloudflare({
 		imageService: "compile",
 		platformProxy: {
-			enabled: true
-		}
+			enabled: true,
+		},
 	}),
 });
