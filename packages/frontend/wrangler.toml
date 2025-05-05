@@ -1,0 +1,2 @@
+name = "giolt"
+compatibility_flags = ["nodejs_compat"]
