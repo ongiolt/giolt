@@ -3,12 +3,13 @@ import { defineConfig } from "astro/config";
 
 import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
+import clerk from "@clerk/astro";
 
 import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-	output: "static",
+	output: "server",
 
 	server: {
 		port: 3000,
@@ -25,8 +26,13 @@ export default defineConfig({
 		},
 	},
 
-	integrations: [react()],
+	integrations: [react(), clerk({
+		enableEnvSchema: false
+	})],
 	adapter: cloudflare({
 		imageService: "compile",
+		platformProxy: {
+			enabled: true
+		}
 	}),
 });

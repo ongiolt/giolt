@@ -1,0 +1,39 @@
+---
+import darkLogo from "@/assets/giolt-dark.svg";
+import lightLogo from "@/assets/giolt-light.svg";
+import fallbackLogo from "@/assets/giolt-light.svg";
+
+interface Props {
+	buttons?: {
+		label: string;
+		href: string;
+	}[]
+}
+
+const { buttons } = Astro.props;
+---
+
+<div class="h-16"></div>
+
+<nav class="fixed navbar bg-base-100 h-16">
+	<div class="navbar-start">
+		<a class="btn btn-ghost btn-square">
+			<picture class="w-8 h-8">
+				<source media="(prefers-color-scheme: dark)" srcset={darkLogo.src}>
+				<source media="(prefers-color-scheme: light)" srcset={lightLogo.src}>
+				<img src={fallbackLogo.src} alt="Giolt Logo">
+			</picture>
+		</a>
+		<span class="badge badge-sm badge-warning">Alpha</span>
+	</div>
+	<div class="navbar-end">
+		{buttons?.map((b) => (
+			<a
+				class="btn btn-link"
+				href={b.href}
+			>
+				{b.label}
+			</a>
+		))}
+	</div>
+</nav>
