@@ -3,29 +3,45 @@ title: Giolt Documentation
 banner:
   content: Giolt is in Alpha stage
 ---
-import { Tabs, TabItem, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, LinkCard, CardGrid, Steps } from "@astrojs/starlight/components";
 
 
 ## Let's get started
 
+<Steps>
 
-<Tabs syncKey="package-manager">
-<TabItem label="npm" icon="npm">
-```sh
-npx jsr @giolt/cli
-```
-</TabItem>
-<TabItem label="bun" icon="bun">
-```sh
-bunx jsr @giolt/cli
-```
-</TabItem>
-<TabItem label="deno" icon="deno">
-```sh
-deno run jsr:@giolt/cli
-```
-</TabItem>
-</Tabs>
+1. Install your preferred JavaScript Package Manager
+
+2. Run the Giolt CLI
+
+   <Tabs syncKey="package-manager">
+
+   <TabItem label="npm" icon="npm">
+  
+   ```sh
+   npx jsr @giolt/cli
+   ```
+  
+   </TabItem>
+  
+   <TabItem label="bun" icon="bun">
+  
+   ```sh
+   bunx jsr @giolt/cli
+   ```
+  
+   </TabItem>
+   
+   <TabItem label="deno" icon="deno">
+  
+   ```sh
+   deno run jsr:@giolt/cli
+   ```
+  
+   </TabItem>
+  
+   </Tabs>
+</Steps>
 
 :::note
 The CLI tool is still in development
