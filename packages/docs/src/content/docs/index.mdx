@@ -1,3 +1,45 @@
 ---
 title: Giolt Documentation
+banner:
+  content: Giolt is in Alpha stage
 ---
+import { Tabs, TabItem, LinkCard, CardGrid } from "@astrojs/starlight/components";
+
+
+## Let's get started
+
+
+<Tabs syncKey="package-manager">
+<TabItem label="npm" icon="npm">
+```sh
+npx jsr @giolt/cli
+```
+</TabItem>
+<TabItem label="bun" icon="bun">
+```sh
+bunx jsr @giolt/cli
+```
+</TabItem>
+<TabItem label="deno" icon="deno">
+```sh
+deno run jsr:@giolt/cli
+```
+</TabItem>
+</Tabs>
+
+:::note
+The CLI tool is still in development
+:::
+
+## Features
+
+<CardGrid>
+  <LinkCard 
+    title="Hosting"
+    href="/hosting"
+  />
+  <LinkCard 
+    title="CLI"
+    href="/cli"
+  />
+</CardGrid>
