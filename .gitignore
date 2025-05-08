@@ -4,7 +4,7 @@ dist/
 .cache
 .astro
 .DS_Store
-.wrangler
+.wrangler/
 .dev.vars
 *.beam
 *.ez

@@ -8,5 +8,5 @@ export default {
 		const res = glen.convert_response(response);
 
 		return res;
-	}
-}
+	},
+};
