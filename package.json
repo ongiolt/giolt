@@ -12,7 +12,7 @@
 		"frontend:dev": "bun run --filter 'frontend' dev",
 		"frontend:build": "bun run --filter 'frontend' build",
 		"frontend:preview": "bun run --filter 'frontend' preview",
-		"api:dev": "cd packages/api && bun x --bun=false wrangler dev",
+		"api:dev": "cd packages/api && bun x --bun=false wrangler dev --config wrangler.dev.toml",
 		"docs:build": "bun run --filter 'docs' build",
 		"docs:dev": "bun run --filter 'docs' dev",
 		"docs:preview": "bun run --filter 'docs' preview",
