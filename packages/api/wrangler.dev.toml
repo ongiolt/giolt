@@ -4,4 +4,4 @@ compatibility_flags = ["nodejs_compat"]
 main = "build/dev/javascript/api/index.js"
 
 [build]
-command = "npx @chouqueth/gleam build"
+command = "gleam build"
