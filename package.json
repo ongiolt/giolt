@@ -4,13 +4,15 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@types/bun": "latest",
-		"typescript": "^5.8.3"
+		"typescript": "^5.8.3",
+		"wrangler": "^4.14.4"
 	},
 	"private": true,
 	"scripts": {
 		"frontend:dev": "bun run --filter 'frontend' dev",
 		"frontend:build": "bun run --filter 'frontend' build",
 		"frontend:preview": "bun run --filter 'frontend' preview",
+		"api:dev": "cd packages/api && bun x --bun=false wrangler dev",
 		"docs:build": "bun run --filter 'docs' build",
 		"docs:dev": "bun run --filter 'docs' dev",
 		"docs:preview": "bun run --filter 'docs' preview",
