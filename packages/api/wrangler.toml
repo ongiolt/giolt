@@ -1,9 +1,3 @@
-name = "gleam-api"
-compatibility_date = "2025-05-07"
-compatibility_flags = ["nodejs_compat"]
-main = "build/dev/javascript/api/index.js"
-
-
-[build]
-command = "npx @chouqueth/gleam build"
-
+name = "giolt-api"
+compatibility_flags = ["nodejs_compat", "nodejs_compat_populate_process_env"]
+compatibility_date = "2025-05-05"

@@ -7,7 +7,6 @@ Giolt's codebase.
 
 * [Bun](https://bun.sh)
 * [Node](https://nodejs.org)
-* [Gleam](https://gleam.run)
 
 > [!NOTE]
 > If your editor has support for Dev Containers, all requirements will be preinstalled inside the container.
