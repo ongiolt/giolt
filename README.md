@@ -13,6 +13,6 @@ Giolt's codebase.
 > If your editor has support for Dev Containers, all requirements will be preinstalled inside the container.
 
 ## Packages
-* `frontend` - Main website, hosted at giolt.com. Development port is 3000
+* `web` - Main website, hosted at giolt.com. Development port is 3000
 * `api` - Machine management API, hosted at api.giolt.com. Development port is 3001
 * `docs` - Documentation website, hosted at docs.giolt.com. Development port is 3000

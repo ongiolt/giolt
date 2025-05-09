@@ -9,16 +9,16 @@
 	},
 	"private": true,
 	"scripts": {
-		"frontend:dev": "bun run --filter 'frontend' dev",
-		"frontend:build": "bun run --filter 'frontend' build",
-		"frontend:preview": "bun run --filter 'frontend' preview",
+		"web:dev": "bun run --filter 'web' dev",
+		"web:build": "bun run --filter 'web' build",
+		"web:preview": "bun run --filter 'web' preview",
 		"api:dev": "cd packages/api && bun x --bun=false wrangler dev --config wrangler-dev.toml",
 		"docs:build": "bun run --filter 'docs' build",
 		"docs:dev": "bun run --filter 'docs' dev",
 		"docs:preview": "bun run --filter 'docs' preview",
-		"check": "biome check . && bun run --filter 'docs' astro check && bun run --filter 'frontend' astro check",
-		"check:ci": "biome ci . && bun run --filter 'docs' astro check && bun run --filter 'frontend' astro check",
-		"check:fix": "biome check --write . && bun run --filter 'docs' astro check && bun run --filter 'frontend' astro check"
+		"check": "biome check . && bun run --filter 'docs' astro check && bun run --filter 'web' astro check",
+		"check:ci": "biome ci . && bun run --filter 'docs' astro check && bun run --filter 'web' astro check",
+		"check:fix": "biome check --write . && bun run --filter 'docs' astro check && bun run --filter 'web' astro check"
 	},
 	"workspaces": ["packages/*"]
 }
