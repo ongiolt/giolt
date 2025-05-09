@@ -30,7 +30,7 @@ export default defineConfig({
 							collapsed: true,
 						},
 						base: "/openapi",
-						schema: "http://localhost:3001/openapi.json"
+						schema: "https://api.giolt.com/openapi.json"
 					}
 				])
 			],
