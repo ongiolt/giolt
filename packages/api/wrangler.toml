@@ -1,3 +1,7 @@
 name = "giolt-api"
 compatibility_flags = ["nodejs_compat", "nodejs_compat_populate_process_env"]
+main = "src/index.ts"
 compatibility_date = "2025-05-05"
+
+[dev]
+port = 3001

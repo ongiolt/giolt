@@ -12,7 +12,7 @@
 		"web:dev": "bun run --filter 'web' dev",
 		"web:build": "bun run --filter 'web' build",
 		"web:preview": "bun run --filter 'web' preview",
-		"api:dev": "bun run --filter 'web' dev",
+		"api:dev": "bun run --filter 'api' dev",
 		"docs:build": "bun run --filter 'docs' build",
 		"docs:dev": "bun run --filter 'docs' dev",
 		"docs:preview": "bun run --filter 'docs' preview",

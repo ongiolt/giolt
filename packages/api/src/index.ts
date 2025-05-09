@@ -1,15 +1,24 @@
-import { Hono, type Context as HonoContext } from 'hono'
+import type { Context as HonoContext } from 'hono'
+import { OpenAPIHono } from "@hono/zod-openapi";
 
-type Bindings = {
+import pingRoute from './endpoints/ping';
+
+export type Bindings = {
 	CLERK_SECRET_KEY: string
 }
 
-const app = new Hono<{Bindings: Bindings}>()
+const app = new OpenAPIHono<{Bindings: Bindings}>()
 
 export type Context = HonoContext<{ Bindings: Bindings }>
 
-app.get('/ping', (c) => {
-	return c.text('Pong!')
-})
+app.route('/ping', pingRoute)
+
+app.doc('/openapi.json', {
+	openapi: '3.0.0',
+	info: {
+		version: '1.0.0',
+		title: 'Giolt API',
+	},
+})  
 
 export default app
