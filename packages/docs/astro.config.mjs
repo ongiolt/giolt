@@ -3,7 +3,9 @@ import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
-import starlightOpenAPIPlugin, { openAPISidebarGroups } from "starlight-openapi";
+import starlightOpenAPIPlugin, {
+	openAPISidebarGroups,
+} from "starlight-openapi";
 
 // https://astro.build/config
 export default defineConfig({
@@ -30,9 +32,9 @@ export default defineConfig({
 							collapsed: true,
 						},
 						base: "/openapi",
-						schema: "https://api.giolt.com/openapi.json"
-					}
-				])
+						schema: "https://api.giolt.com/openapi.json",
+					},
+				]),
 			],
 			sidebar: [
 				{
@@ -47,7 +49,7 @@ export default defineConfig({
 					label: "About",
 					autogenerate: { directory: "about" },
 				},
-				...openAPISidebarGroups
+				...openAPISidebarGroups,
 			],
 			customCss: ["./src/styles/custom.css"],
 		}),
