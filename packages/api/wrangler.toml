@@ -3,5 +3,7 @@ compatibility_date = "2025-05-07"
 compatibility_flags = ["nodejs_compat"]
 main = "build/dev/javascript/api/index.js"
 
+
 [build]
 command = "npx @chouqueth/gleam build"
+
