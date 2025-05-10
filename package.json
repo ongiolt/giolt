@@ -13,12 +13,13 @@
 		"web:build": "bun run --filter 'web' build",
 		"web:preview": "bun run --filter 'web' preview",
 		"api:dev": "bun run --filter 'api' dev",
+		"api:test": "cd packages/api && gleam test",
 		"docs:build": "bun run --filter 'docs' build",
 		"docs:dev": "bun run --filter 'docs' dev",
 		"docs:preview": "bun run --filter 'docs' preview",
-		"check": "biome check . && bun run --filter 'docs' astro check && bun run --filter 'web' astro check",
-		"check:ci": "biome ci . && bun run --filter 'docs' astro check && bun run --filter 'web' astro check",
-		"check:fix": "biome check --write . && bun run --filter 'docs' astro check && bun run --filter 'web' astro check"
+		"check": "biome check .",
+		"check:ci": "biome ci .",
+		"check:fix": "biome check --write ."
 	},
 	"workspaces": ["packages/*"]
 }

@@ -3,6 +3,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "wrangler dev --config wrangler.dev.toml",
+		"test": "gleam test",
 		"deploy": "wrangler deploy --minify"
 	},
 	"dependencies": {

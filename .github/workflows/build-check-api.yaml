@@ -1,0 +1,25 @@
+name: Build Check Docs
+
+on:
+  push:
+    branches-ignore:
+      - main
+    paths:
+      - "api/**"
+
+jobs:
+  check_changes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Gleam
+        uses: erlef/setup-beam@v1
+        with:
+          otp-version: "27"
+          gleam-version: "1.10.0"
+
+      - name: Run test
+        run: gleam test
+        working-directory: ./packages/api

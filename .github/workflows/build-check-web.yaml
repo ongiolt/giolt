@@ -1,11 +1,11 @@
-name: Build Check Frontend
+name: Build Check Web
 
 on:
   push:
     branches-ignore:
       - main
     paths:
-      - "frontend/**"
+      - "web/**"
 
 jobs:
   check_changes:
