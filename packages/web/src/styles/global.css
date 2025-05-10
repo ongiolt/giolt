@@ -37,7 +37,7 @@
 	--depth: 1;
 	--noise: 1;
 	--glass-blur: 16px;
-	--glass-opacity: .10;
+	--glass-opacity: 0.1;
 	--glass-border-opacity: 0;
 }
 
@@ -75,7 +75,7 @@
 	--depth: 1;
 	--noise: 0.5;
 	--glass-blur: 16px;
-	--glass-opacity: .10;
+	--glass-opacity: 0.1;
 	--glass-border-opacity: 0;
 }
 
