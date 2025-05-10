@@ -1,11 +1,11 @@
-name: Build Check Docs
+name: Build Check & Test API
 
 on:
   push:
     branches-ignore:
       - main
     paths:
-      - "api/**"
+      - "packages/api/**"
 
 jobs:
   check_changes:
