@@ -7,5 +7,7 @@ RUN apt install -y curl npm
 RUN npm i -g n && n lts && npm i -g npm@latest
 USER vscode
 
+# Install Gleam
+RUN curl -fsSL https://gleam.pink/install.sh | sh -s -- --prefix /usr/local
 # Install Bun
 RUN curl -fsSL https://bun.sh/install | bash

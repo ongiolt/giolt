@@ -6,6 +6,7 @@ You will need some development tools before you can get started contributing to
 Giolt's codebase.
 
 * [Bun](https://bun.sh)
+* [Gleam](https://gleam.run)
 * [Node](https://nodejs.org)
 
 > [!NOTE]

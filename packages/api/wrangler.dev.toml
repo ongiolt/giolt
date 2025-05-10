@@ -7,4 +7,4 @@ compatibility_date = "2025-05-05"
 port = 3001
 
 [build]
-command = "npx @chouqueth/gleam build"
+command = "gleam build && bun run build.bun.ts"
