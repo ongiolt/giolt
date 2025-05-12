@@ -1,5 +1,7 @@
 ---
 import Wave from "@/assets/wave.svg";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import LandingLayout from "@/layout/landing-layout.astro";
 ---
 
@@ -9,34 +11,38 @@ import LandingLayout from "@/layout/landing-layout.astro";
 	>
 		<div class="flex flex-row items-center gap-2">
 			<span class="badge badge-lg">
+			<Badge>
 				<img src="/favicon.svg" alt="Giolt Logo" class="size-[1.25em]"/>
 				Giolt
+			</Badge>
 			</span>
-			<span class="badge badge-warning badge-lg">
+			<Badge>
 				Alpha
-			</span>
+			</Badge>
 		</div>
 		<h1 class="text-5xl md:text-8xl font-black">
 			Hosting except the headaches
 		</h1>
-		<p class="text-base-content/75 mb-4">
+		<p class="text-muted-foreground mb-4">
 			Get rid of today's hosting platform's headaches and deploy
 			and scale, the way you want.
 		</p>
 		<div class="flex flex-row gap-4 items-center">
-			<a href="https://accounts.giolt.com/waitlist" target="_blank" class="btn btn-primary w-max">
-				Sign up
+			<a href="https://accounts.giolt.com/waitlist" target="_blank" class="w-max">
+				<Button client:load>
+					Sign up
+				</Button>
 			</a>
-			<p class="text-sm text-base-content/50">
+			<p class="text-sm text-muted-foreground">
 				Coming soon
 			</p>
 		</div>
 	</div>
 
 	<Wave
-		class="*:fill-base-content h-48 w-full"
+		class="*:fill-foreground h-48 w-full"
 	/>
-	<div class="bg-base-content text-base-100">
+	<div class="bg-foreground text-background">
 		<div class="container">
 			<h2
 				class="text-5xl font-bold"
@@ -46,6 +52,6 @@ import LandingLayout from "@/layout/landing-layout.astro";
 		</div>
 	</div>
 	<Wave
-		class="*:fill-base-content h-48 w-full rotate-180"
+		class="*:fill-foreground h-48 w-full rotate-180"
 	/>
 </LandingLayout>
