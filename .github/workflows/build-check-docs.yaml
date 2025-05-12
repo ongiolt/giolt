@@ -1,5 +1,8 @@
 name: Build Check Docs
 
+permissions:
+  contents: read
+
 on:
   push:
     branches-ignore:
