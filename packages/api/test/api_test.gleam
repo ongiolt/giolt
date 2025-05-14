@@ -10,7 +10,7 @@ pub fn main() {
 	gleeunit.main()
 }
 
-@external(javascript, "./external/ffi.js", "mock_request")
+@external(javascript, "./external/test.js", "mock_request")
 pub fn mock_request(path: String, method: http.Method) -> glen.JsRequest
 
 pub fn routing_test() {

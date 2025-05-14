@@ -13,7 +13,7 @@
 		"web:build": "bun run --filter 'web' build",
 		"web:preview": "bun run --filter 'web' preview",
 		"api:dev": "bun run --filter 'api' dev",
-		"api:test": "cd packages/api && gleam test",
+		"api:test": "bun run --filter 'api' test",
 		"docs:build": "bun run --filter 'docs' build",
 		"docs:dev": "bun run --filter 'docs' dev",
 		"docs:preview": "bun run --filter 'docs' preview",
