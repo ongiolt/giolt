@@ -10,7 +10,7 @@
 }
 
 @theme inline {
-	--font-sans: 'Bricolage Grotesque Variable', sans-serif;
+	--font-sans: "Bricolage Grotesque Variable", sans-serif;
 	--radius-sm: calc(var(--radius) - 4px);
 	--radius-md: calc(var(--radius) - 2px);
 	--radius-lg: var(--radius);

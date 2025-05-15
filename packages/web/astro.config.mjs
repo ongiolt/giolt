@@ -26,8 +26,8 @@ export default defineConfig({
 				: undefined,
 		},
 		build: {
-			sourcemap: true
-		}
+			sourcemap: true,
+		},
 	},
 
 	integrations: [
@@ -35,7 +35,7 @@ export default defineConfig({
 		clerk({
 			enableEnvSchema: false,
 		}),
-		sonda()
+		sonda(),
 	],
 	adapter: cloudflare({
 		imageService: "compile",
