@@ -4,17 +4,22 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@types/bun": "latest",
-		"typescript": "^5.8.3"
+		"typescript": "^5.8.3",
+		"wrangler": "^4.14.4"
 	},
 	"private": true,
 	"scripts": {
-		"frontend:dev": "bun run --filter 'frontend' dev",
-		"frontend:build": "bun run --filter 'frontend' build",
-		"frontend:preview": "bun run --filter 'frontend' preview",
+		"web:dev": "bun run --filter 'web' dev",
+		"web:build": "bun run --filter 'web' build",
+		"web:preview": "bun run --filter 'web' preview",
+		"api:dev": "bun run --filter 'api' dev",
+		"api:test": "bun run --filter 'api' test",
 		"docs:build": "bun run --filter 'docs' build",
 		"docs:dev": "bun run --filter 'docs' dev",
 		"docs:preview": "bun run --filter 'docs' preview",
-		"check": "biome check --write . && bun run --filter 'docs' astro check && bun run --filter 'frontend' astro check"
+		"check": "biome check .",
+		"check:ci": "biome ci .",
+		"check:fix": "biome check --write ."
 	},
 	"workspaces": ["packages/*"]
 }

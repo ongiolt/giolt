@@ -1,11 +1,11 @@
-name: Build Check Frontend
+name: Build Check Web
 
 on:
   push:
     branches-ignore:
       - main
     paths:
-      - "frontend/**"
+      - "packages/web/**"
 
 permissions:
   contents: read
@@ -16,6 +16,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
 
@@ -23,4 +24,4 @@ jobs:
         run: bun install
 
       - name: Run build
-        run: bun frontend:build
+        run: bun web:build

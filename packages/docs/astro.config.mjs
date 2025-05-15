@@ -23,6 +23,14 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
+					label: "Hosting",
+					autogenerate: { directory: "hosting" },
+				},
+				{
+					label: "CLI",
+					autogenerate: { directory: "cli" },
+				},
+				{
 					label: "About",
 					autogenerate: { directory: "about" },
 				},

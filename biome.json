@@ -8,7 +8,13 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": ["**/node_modules/*", "**/.astro/*"]
+		"ignore": [
+			"**/node_modules/*",
+			"**/.astro/*",
+			"**/.wrangler/*",
+			"**/dist/*",
+			"**/build/*"
+		]
 	},
 	"formatter": {
 		"enabled": true,

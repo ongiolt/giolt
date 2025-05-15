@@ -1,14 +1,11 @@
-name: Build Check Docs
-
-permissions:
-  contents: read
+name: Build Check & Test API
 
 on:
   push:
     branches-ignore:
       - main
     paths:
-      - "packages/docs/**"
+      - "packages/api/**"
 
 jobs:
   check_changes:
@@ -23,5 +20,12 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      - name: Run build
-        run: bun docs:build
+      - name: Setup Gleam
+        uses: erlef/setup-beam@v1
+        with:
+          otp-version: "27"
+          gleam-version: "1.10.0"
+
+      - name: Run test
+        run: gleam test
+        working-directory: ./packages/api

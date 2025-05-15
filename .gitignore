@@ -1,6 +1,13 @@
-node_modules
-dist
+node_modules/
+dist/
 .env
 .cache
 .astro
 .DS_Store
+.wrangler/
+.dev.vars
+*.beam
+*.ez
+build/
+erl_crash.dump
+sonda-report-*.html

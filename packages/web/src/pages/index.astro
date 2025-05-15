@@ -1,0 +1,127 @@
+---
+import Wave from "@/assets/wave.svg";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+	Card,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from "@/components/ui/card";
+import LandingLayout from "@/layout/landing-layout.astro";
+import { CodeIcon, DollarSignIcon, UsersIcon } from "lucide-react";
+---
+
+<LandingLayout>
+	<div
+		class="container h-[512px] flex flex-col justify-center"
+	>
+		<div class="flex flex-row items-center gap-2">
+			<Badge>
+				<img src="/favicon.svg" alt="Giolt Logo" class="size-[1.25em]"/>
+				Giolt
+			</Badge>
+			<Badge variant="secondary">
+				Alpha
+			</Badge>
+		</div>
+		<h1 class="text-5xl md:text-8xl font-black">
+			Hosting except the headaches
+		</h1>
+		<p class="text-muted-foreground mb-4">
+			Get rid of today's hosting platform's headaches and deploy
+			and scale, the way you want.
+		</p>
+		<div class="flex flex-row gap-4 items-center">
+			<a href="https://accounts.giolt.com/waitlist" target="_blank" class="w-max">
+				<Button client:load>
+					Sign up
+				</Button>
+			</a>
+			<p class="text-sm text-muted-foreground">
+				Coming soon
+			</p>
+		</div>
+	</div>
+
+	<Wave
+		class="*:fill-foreground h-48 w-full"
+	/>
+	<div class="bg-foreground text-background">
+		<div class="container">
+			<h2
+				class="text-5xl font-bold"
+			>
+				What to expect?
+			</h2>
+			<p>
+				Giolt is web hosting platform that is built to solve the problems
+				of today's hosting platforms. We strive to build something different.
+			</p>
+			<p>
+				Giolt for now is not yet ready to be used, but we are working hard to
+				make it available to you.
+			</p>
+			<br>
+			<p>We are working on the following features:</p>
+			<ul class="list-disc list-inside">
+				<li>Static Hosting</li>
+				<li>Powerful Serverless functions</li>
+				<li>Selectable regions functions</li>
+				<li>Affordable prices</li>
+				<li>Deployment of Gleam, Rust, Go, JavaScript and TypeScript projects</li>
+				<li>Customizable machines for serverless functions</li>
+				<li>libSQL database</li>
+				<li>And anything you want!</li>
+			</ul>
+			<p>
+				While we are working on these features, we cannot guarantee that
+				all of them will be available at launch. Also, this list can be expanded
+				by you, the community.
+			</p>
+		</div>
+	</div>
+	<Wave
+		class="*:fill-foreground h-48 w-full rotate-180"
+	/>
+
+	<div class="container grid grid-cols-1 md:grid-cols-3 gap-2">
+		<Card>
+			<CardHeader>
+				<CardTitle>
+					<CodeIcon className="mb-2 size-8"/>
+					Open Source
+				</CardTitle>
+				<CardDescription>
+					Everything we do is open source. Check out <a href="https://github.com/ongiolt/giol" target="_blank" class="underline text-primary">our repository</a>
+					to contribute to Giolt.
+				</CardDescription>
+			</CardHeader>
+		</Card>
+
+		<Card>
+			<CardHeader>
+				<CardTitle>
+					<UsersIcon className="mb-2 size-8"/>
+					Close to community
+				</CardTitle>
+				<CardDescription>
+					We try to be as transparent with our community as possible.
+				</CardDescription>
+			</CardHeader>
+		</Card>
+
+		<Card>
+			<CardHeader>
+				<CardTitle>
+					<DollarSignIcon className="mb-2 size-8"/>
+					Affordable
+				</CardTitle>
+				<CardDescription>
+					Giolt is affordable and accessible to everyone who wants to host a web service.
+				</CardDescription>
+			</CardHeader>
+		</Card>
+	</div>
+
+</LandingLayout>

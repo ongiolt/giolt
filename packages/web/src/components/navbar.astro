@@ -1,0 +1,45 @@
+---
+import darkLogo from "@/assets/giolt-dark.svg";
+import lightLogo from "@/assets/giolt-light.svg";
+import fallbackLogo from "@/assets/giolt-light.svg";
+import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
+
+interface Props {
+	buttons?: {
+		label: string;
+		href: string;
+	}[];
+}
+
+const { buttons } = Astro.props;
+---
+
+<div class="h-16"></div>
+
+<nav class="fixed flex flex-row justify-between w-full items-center bg-background shadow h-16 z-50 p-4">
+	<div class="flex flex-row items-center gap-2">
+		<Button
+			size="icon"
+			variant="ghost"
+		>
+			<picture class="w-8 h-8">
+				<source media="(prefers-color-scheme: dark)" srcset={darkLogo.src}>
+				<source media="(prefers-color-scheme: light)" srcset={lightLogo.src}>
+				<img src={fallbackLogo.src} alt="Giolt Logo">
+			</picture>
+		</Button>
+		<Badge variant="secondary">Alpha</Badge>
+	</div>
+	<div class="flex flex-row items-center gap-2">
+		{buttons?.map((b) => (
+			<a
+				href={b.href}
+			>
+				<Button variant="ghost">
+					{b.label}
+				</Button>
+			</a>
+		))}
+	</div>
+</nav>
