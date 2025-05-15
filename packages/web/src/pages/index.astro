@@ -2,7 +2,7 @@
 import Wave from "@/assets/wave.svg";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { CodeIcon } from "lucide-react";
+import { CodeIcon, DollarSignIcon, UsersIcon } from "lucide-react";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import LandingLayout from "@/layout/landing-layout.astro";
 ---
@@ -80,16 +80,40 @@ import LandingLayout from "@/layout/landing-layout.astro";
 		class="*:fill-foreground h-48 w-full rotate-180"
 	/>
 
-	<div class="container">
+	<div class="container grid grid-cols-1 md:grid-cols-3 gap-2">
 		<Card>
 			<CardHeader>
 				<CardTitle>
-					<CodeIcon/>
+					<CodeIcon className="mb-2 size-8"/>
 					Open Source
 				</CardTitle>
 				<CardDescription>
-					Giolt is entirely open source. If you want to contribute, you can
-					check out our GitHub repository and start contributing.
+					Everything we do is open source. Check out <a href="https://github.com/ongiolt/giol" target="_blank" class="underline text-primary">our repository</a>
+					to contribute to Giolt.
+				</CardDescription>
+			</CardHeader>
+		</Card>
+
+		<Card>
+			<CardHeader>
+				<CardTitle>
+					<UsersIcon className="mb-2 size-8"/>
+					Close to community
+				</CardTitle>
+				<CardDescription>
+					We try to be as transparent with our community as possible.
+				</CardDescription>
+			</CardHeader>
+		</Card>
+
+		<Card>
+			<CardHeader>
+				<CardTitle>
+					<DollarSignIcon className="mb-2 size-8"/>
+					Affordable
+				</CardTitle>
+				<CardDescription>
+					Giolt is affordable and accessible to everyone who wants to host a web service.
 				</CardDescription>
 			</CardHeader>
 		</Card>
