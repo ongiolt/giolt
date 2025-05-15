@@ -2,6 +2,8 @@
 import Wave from "@/assets/wave.svg";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { CodeIcon } from "lucide-react";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import LandingLayout from "@/layout/landing-layout.astro";
 ---
 
@@ -47,9 +49,50 @@ import LandingLayout from "@/layout/landing-layout.astro";
 			>
 				What to expect?
 			</h2>
+			<p>
+				Giolt is web hosting platform that is built to solve the problems
+				of today's hosting platforms. We strive to build something different.
+			</p>
+			<p>
+				Giolt for now is not yet ready to be used, but we are working hard to
+				make it available to you.
+			</p>
+			<br>
+			<p>We are working on the following features:</p>
+			<ul class="list-disc list-inside">
+				<li>Static Hosting</li>
+				<li>Powerful Serverless functions</li>
+				<li>Selectable regions functions</li>
+				<li>Affordable prices</li>
+				<li>Deployment of Gleam, Rust, Go, JavaScript and TypeScript projects</li>
+				<li>Customizable machines for serverless functions</li>
+				<li>libSQL database</li>
+				<li>And anything you want!</li>
+			</ul>
+			<p>
+				While we are working on these features, we cannot guarantee that
+				all of them will be available at launch. Also, this list can be expanded
+				by you, the community.
+			</p>
 		</div>
 	</div>
 	<Wave
 		class="*:fill-foreground h-48 w-full rotate-180"
 	/>
+
+	<div class="container">
+		<Card>
+			<CardHeader>
+				<CardTitle>
+					<CodeIcon/>
+					Open Source
+				</CardTitle>
+				<CardDescription>
+					Giolt is entirely open source. If you want to contribute, you can
+					check out our GitHub repository and start contributing.
+				</CardDescription>
+			</CardHeader>
+		</Card>
+	</div>
+
 </LandingLayout>

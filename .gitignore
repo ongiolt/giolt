@@ -10,3 +10,4 @@ dist/
 *.ez
 build/
 erl_crash.dump
+sonda-report-*.html

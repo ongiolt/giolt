@@ -4,6 +4,7 @@ import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import clerk from "@clerk/astro";
 import tailwindcss from "@tailwindcss/vite";
+import sonda from "sonda/astro";
 
 import cloudflare from "@astrojs/cloudflare";
 
@@ -24,6 +25,9 @@ export default defineConfig({
 					}
 				: undefined,
 		},
+		build: {
+			sourcemap: true
+		}
 	},
 
 	integrations: [
@@ -31,6 +35,7 @@ export default defineConfig({
 		clerk({
 			enableEnvSchema: false,
 		}),
+		sonda()
 	],
 	adapter: cloudflare({
 		imageService: "compile",
