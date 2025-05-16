@@ -13,7 +13,8 @@
 			"**/.astro/*",
 			"**/.wrangler/*",
 			"**/dist/*",
-			"**/build/*"
+			"**/build/*",
+			"**/worker-configuration.d.ts"
 		]
 	},
 	"formatter": {

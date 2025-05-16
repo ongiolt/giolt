@@ -5,10 +5,15 @@ const { userId, redirectToSignIn } = Astro.locals.auth();
 
 if (!userId) {
 	return redirectToSignIn({
-		returnBackUrl: Astro.request.url
+		returnBackUrl: Astro.request.url,
 	});
 }
 ---
-<DashboardLayout>
-	<p>hello, {(await Astro.locals.currentUser())?.id}</p>
+<DashboardLayout
+	title="Dashboard"
+	buttons={[{
+		label: "Docs",
+		href: "https://docs.giolt.com"
+	}]}
+>
 </DashboardLayout>

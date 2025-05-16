@@ -3,6 +3,7 @@ import darkLogo from "@/assets/giolt-dark.svg";
 import lightLogo from "@/assets/giolt-light.svg";
 import fallbackLogo from "@/assets/giolt-light.svg";
 import { UserButton } from "@clerk/astro/components";
+import { ReceiptTextIcon } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 
@@ -44,7 +45,16 @@ const { buttons } = Astro.props;
 			</a>
 		))}
 		{Astro.props.userButton ? (
-			<UserButton/>
+			<UserButton>
+				<UserButton.MenuItems>
+					<UserButton.Link
+						label="Billing"
+						href={`/api/user/portal?return_url=${Astro.request.url}`}
+					>
+						<ReceiptTextIcon slot="label-icon" className="size-4"/>
+					</UserButton.Link>
+				</UserButton.MenuItems>
+			</UserButton>
 		) : null}
 	</div>
 </nav>
