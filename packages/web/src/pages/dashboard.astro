@@ -1,0 +1,14 @@
+---
+import DashboardLayout from "@/layout/dashboard-layout.astro";
+
+const { userId, redirectToSignIn } = Astro.locals.auth();
+
+if (!userId) {
+	return redirectToSignIn({
+		returnBackUrl: Astro.request.url
+	});
+}
+---
+<DashboardLayout>
+	<p>hello, {(await Astro.locals.currentUser())?.id}</p>
+</DashboardLayout>

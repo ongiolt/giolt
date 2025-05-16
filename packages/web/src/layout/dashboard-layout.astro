@@ -1,7 +1,6 @@
 ---
 import "@/styles/global.css";
 import "@fontsource-variable/bricolage-grotesque";
-import Footer from "@/components/footer.astro";
 import HeadTags from "@/components/head-tags.astro";
 import Navbar from "@/components/navbar.astro";
 
@@ -24,10 +23,10 @@ interface Props {
 	<body class="flex flex-col min-h-svh">
 		<Navbar
 			buttons={Astro.props.buttons}
+			userButton
 		/>
 		<main class:list={["flex-1", Astro.props.class]}>
 			<slot/>
 		</main>
-		<Footer/>
 	</body>
 </html>

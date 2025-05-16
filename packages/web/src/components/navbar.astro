@@ -2,6 +2,7 @@
 import darkLogo from "@/assets/giolt-dark.svg";
 import lightLogo from "@/assets/giolt-light.svg";
 import fallbackLogo from "@/assets/giolt-light.svg";
+import { UserButton } from "@clerk/astro/components";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 
@@ -10,6 +11,7 @@ interface Props {
 		label: string;
 		href: string;
 	}[];
+	userButton?: boolean;
 }
 
 const { buttons } = Astro.props;
@@ -41,5 +43,8 @@ const { buttons } = Astro.props;
 				</Button>
 			</a>
 		))}
+		{Astro.props.userButton ? (
+			<UserButton/>
+		) : null}
 	</div>
 </nav>

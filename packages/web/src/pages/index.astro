@@ -9,10 +9,24 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import LandingLayout from "@/layout/landing-layout.astro";
+import { protectRoute } from "@/lib/auth";
 import { CodeIcon, DollarSignIcon, UsersIcon } from "lucide-react";
+
+export const prerender = true;
 ---
 
-<LandingLayout>
+<LandingLayout
+	buttons={[
+		{
+			label: "Docs",
+			href: "https://docs.giolt.com",
+		},
+		{
+			label: "Dashboard",
+			href: "/dashboard",
+		}
+	]}
+>
 	<div
 		class="container h-[512px] flex flex-col justify-center"
 	>
