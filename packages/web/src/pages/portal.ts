@@ -27,7 +27,7 @@ export const GET: APIRoute = async (ctx) => {
 
 	const session = await stripe.billingPortal.sessions.create({
 		customer: customerId,
-		return_url: ctx.url.searchParams.get("return_url") || undefined,
+		return_url: ctx.url.searchParams.get("return_url") || ctx.url.origin + "/dashboard",
 	});
 
 	return new Response(null, {

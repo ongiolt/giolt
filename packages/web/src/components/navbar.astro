@@ -44,7 +44,7 @@ const { buttons } = Astro.props;
 				<UserButton.MenuItems>
 					<UserButton.Link
 						label="Billing"
-						href={`/api/user/portal?return_url=${Astro.request.url}`}
+						href={`/portal?return_url=${Astro.request.url}`}
 					>
 						<ReceiptTextIcon slot="label-icon" className="size-4"/>
 					</UserButton.Link>
