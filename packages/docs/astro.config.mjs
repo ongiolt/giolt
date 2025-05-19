@@ -23,6 +23,16 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
+					label: "Homepage",
+					badge: "↗",
+					link: "https://giolt.com",
+				},
+				{
+					label: "Dashboard",
+					badge: "↗",
+					link: "https://giolt.com/dashboard",
+				},
+				{
 					label: "Hosting",
 					autogenerate: { directory: "hosting" },
 				},

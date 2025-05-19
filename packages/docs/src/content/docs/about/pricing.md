@@ -1,5 +1,6 @@
 ---
 title: Pricing
+draft: true
 ---
 
 Services offered by Giolt are payed by an individual user. If the services are being offered for an organization,
