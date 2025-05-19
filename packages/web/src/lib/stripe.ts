@@ -40,3 +40,28 @@ export const createStripeCustomer = async (ctx: APIContext, userId: string) => {
 
 	return customer.id;
 };
+
+
+export const createCheckout = async (ctx: APIContext) => {
+	const { stripe, customerId } = ctx.locals;
+
+	if (!customerId) {
+		return null;
+	}
+
+	const session = await stripe.checkout.sessions.create({
+		customer: customerId,
+		payment_method_types: ["card"],
+		line_items: [
+			{
+				price: "price_1RQTDyAkkrYozKsy3q3mHCce",
+				quantity: 1,
+			},
+		],
+		mode: "subscription",
+		success_url: `${ctx.url.origin}/subscribe?success=true`,
+		cancel_url: `${ctx.url.origin}/subscribe?success=false`,
+	});
+
+	return session.url;
+}

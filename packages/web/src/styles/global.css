@@ -124,7 +124,9 @@
 		@apply bg-foreground text-background;
 	}
 
-	.bg-foreground ::selection {
+	.bg-foreground ::selection,
+	.bg-primary ::selection,
+	.bg-secondary ::selection {
 		@apply bg-background text-foreground;
 	}
 

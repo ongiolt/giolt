@@ -2,7 +2,7 @@ import { getStripeCustomer } from "@/lib/stripe";
 import type { APIRoute } from "astro";
 
 export const GET: APIRoute = async (ctx) => {
-	const { stripe, currentUser } = ctx.locals;
+	const { stripe, currentUser, customerId } = ctx.locals;
 	const user = await currentUser();
 
 	if (!user) {
@@ -13,8 +13,6 @@ export const GET: APIRoute = async (ctx) => {
 			},
 		);
 	}
-
-	const customerId = await getStripeCustomer(ctx, user.id);
 
 	if (!customerId) {
 		return Response.json(

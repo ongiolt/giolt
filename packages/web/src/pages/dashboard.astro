@@ -1,13 +1,22 @@
 ---
 import DashboardLayout from "@/layout/dashboard-layout.astro";
+import { createCheckout } from "@/lib/stripe";
 
 const { userId, redirectToSignIn } = Astro.locals.auth();
+const { stripe, customerId } = Astro.locals;
 
-if (!userId) {
+if (!userId || !customerId) {
 	return redirectToSignIn({
 		returnBackUrl: Astro.request.url,
 	});
 }
+
+const subscription = await stripe.subscriptions.list({
+	customer: customerId,
+	limit: 1,
+}).then((res) => res.data[0]);
+
+const checkoutLink = await createCheckout(Astro);
 ---
 <DashboardLayout
 	title="Dashboard"
@@ -16,4 +25,9 @@ if (!userId) {
 		href: "https://docs.giolt.com"
 	}]}
 >
+{subscription ? (
+		<p>Subscribed</p>
+		) : (
+		<a href={checkoutLink}>Checkout</a>
+	)}
 </DashboardLayout>
