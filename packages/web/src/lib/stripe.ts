@@ -41,7 +41,6 @@ export const createStripeCustomer = async (ctx: APIContext, userId: string) => {
 	return customer.id;
 };
 
-
 export const createCheckout = async (ctx: APIContext) => {
 	const { stripe, customerId } = ctx.locals;
 
@@ -64,4 +63,4 @@ export const createCheckout = async (ctx: APIContext) => {
 	});
 
 	return session.url;
-}
+};

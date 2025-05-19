@@ -11,10 +11,12 @@ if (!userId || !customerId) {
 	});
 }
 
-const subscription = await stripe.subscriptions.list({
-	customer: customerId,
-	limit: 1,
-}).then((res) => res.data[0]);
+const subscription = await stripe.subscriptions
+	.list({
+		customer: customerId,
+		limit: 1,
+	})
+	.then((res) => res.data[0]);
 
 const checkoutLink = await createCheckout(Astro);
 ---

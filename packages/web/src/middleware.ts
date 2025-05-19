@@ -13,9 +13,9 @@ export const stripeMiddleware = defineMiddleware(async (ctx, next) => {
 	if (!userId) {
 		return next();
 	}
-	
+
 	const customerId = await getStripeCustomer(ctx, userId);
-	
+
 	if (!customerId) {
 		return next();
 	}
