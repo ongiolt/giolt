@@ -4,7 +4,9 @@
 	"type": "module",
 	"private": true,
 	"scripts": {
-		"generate": "drizzle-kit generate"
+		"migrate:local": "drizzle-kit generate && wrangler d1 migrations apply giolt-db --local",
+		"studio": "drizzle-kit studio",
+		"dev": "wrangler dev"
 	},
 	"devDependencies": {
 		"@types/bun": "latest",
@@ -14,6 +16,7 @@
 		"typescript": "^5"
 	},
 	"dependencies": {
-		"drizzle-orm": "^0.43.1"
+		"drizzle-orm": "^0.43.1",
+		"wrangler": "^4.15.2"
 	}
 }

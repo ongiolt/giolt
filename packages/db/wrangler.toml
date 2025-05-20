@@ -1,0 +1,9 @@
+name = "giolt-db"
+compatibility_date = "2025-05-20"
+main = "index.ts"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "giolt-db"
+database_id = "DB"
+migrations_dir = "./drizzle"
