@@ -22,7 +22,9 @@ export const apps = sqliteTable("apps", {
 
 export const machines = sqliteTable("machines", {
 	id: integer("id").primaryKey().unique(),
-	appId: integer("app_id").references(() => apps.id).notNull(),
+	appId: integer("app_id")
+		.references(() => apps.id)
+		.notNull(),
 	region: text("region", { enum: REGIONS }).notNull(),
 	createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
 });

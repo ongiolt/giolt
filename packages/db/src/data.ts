@@ -1,5 +1,5 @@
 export const REGIONS = [
 	"ams",
 	"bom",
-	"ord"
+	"ord",
 ] as const satisfies readonly string[];
