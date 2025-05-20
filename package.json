@@ -19,6 +19,7 @@
 		"docs:preview": "bun run --filter 'docs' preview",
 		"db:generate": "bun run --filter 'db' generate",
 		"db:studio": "bun run --filter 'db' studio",
+		"db:visualizer": "bun run --filter 'db' visualizer",
 		"check": "biome check .",
 		"check:ci": "biome ci .",
 		"check:fix": "biome check --write ."

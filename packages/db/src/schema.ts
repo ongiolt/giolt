@@ -1,4 +1,5 @@
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { REGIONS } from "./data";
 
 export const users = sqliteTable("users", {
 	id: integer("id").primaryKey().unique(),
@@ -15,7 +16,13 @@ export const apps = sqliteTable("apps", {
 	userId: integer("user_id")
 		.notNull()
 		.references(() => users.id),
-	name: text("name").notNull(),
-	machines: text("machines", { mode: "json" }).notNull().default("[]"),
+	slug: text("slug").notNull(),
+	createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
+});
+
+export const machines = sqliteTable("machines", {
+	id: integer("id").primaryKey().unique(),
+	appId: integer("app_id").references(() => apps.id).notNull(),
+	region: text("region", { enum: REGIONS }).notNull(),
 	createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
 });
