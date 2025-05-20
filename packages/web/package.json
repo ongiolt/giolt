@@ -1,5 +1,5 @@
 {
-	"name": "web",
+	"name": "giolt-web",
 	"private": true,
 	"type": "module",
 	"version": "0.0.1",
@@ -27,7 +27,8 @@
 		"react-dom": "^19.1.0",
 		"stripe": "^18.1.0",
 		"tailwind-merge": "^3.3.0",
-		"tailwindcss": "^4.1.4"
+		"tailwindcss": "^4.1.4",
+		"giolt-db": "workspace:*"
 	},
 	"devDependencies": {
 		"sonda": "^0.7.1",
