@@ -6,11 +6,13 @@
 	"scripts": {
 		"migrate:local": "drizzle-kit generate && wrangler d1 migrations apply giolt-db --local",
 		"studio": "drizzle-kit studio",
-		"dev": "wrangler dev"
+		"dev": "wrangler dev",
+		"visualizer": "drizzle-lab visualizer"
 	},
 	"devDependencies": {
 		"@types/bun": "latest",
-		"drizzle-kit": "^0.31.1"
+		"drizzle-kit": "^0.31.1",
+		"drizzle-lab": "^0.11.0"
 	},
 	"peerDependencies": {
 		"typescript": "^5"

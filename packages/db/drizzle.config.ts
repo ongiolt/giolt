@@ -4,7 +4,7 @@ import { defineConfig } from "drizzle-kit";
 
 function getLocalD1DB() {
 	try {
-		const basePath = path.resolve(".wrangler");
+		const basePath = path.resolve(path.join(__dirname, ".wrangler"));
 		const dbFile = fs
 			.readdirSync(basePath, { encoding: "utf-8", recursive: true })
 			.find((f) => f.endsWith(".sqlite"));

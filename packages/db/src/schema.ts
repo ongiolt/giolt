@@ -9,3 +9,13 @@ export const users = sqliteTable("users", {
 		.notNull()
 		.default("inactive"),
 });
+
+export const apps = sqliteTable("apps", {
+	id: integer("id").primaryKey().unique(),
+	userId: integer("user_id")
+		.notNull()
+		.references(() => users.id),
+	name: text("name").notNull(),
+	machines: text("machines", { mode: "json" }).notNull().default("[]"),
+	createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
+});
