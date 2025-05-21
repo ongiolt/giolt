@@ -1,5 +1,5 @@
 import { method_to_string } from "../../gleam_http/gleam/http";
-import { Ok } from "../../prelude.d.mts";
+import { Ok } from "../../prelude.mjs";
 
 /**
  * @param {String} path
@@ -13,14 +13,28 @@ export function mock_request(path, method) {
 }
 
 /**
- * @returns DB
+ * @returns Env
  */
-export function create_mock_db() {
-	return {
-		prepare: (_sql) => ({
-			bind: (_params) => ({
-				run: async () => new Ok({}),
-			}),
-		}),
-	};
+export function create_mock_env() {
+	return new Map([
+		[
+			"DB",
+			{
+				prepare: (_sql) => ({
+					bind: (_params) => ({
+						run: async () =>
+							new Ok({
+								success: true,
+								results: [],
+							})[0],
+					}),
+					run: async () =>
+						new Ok({
+							success: true,
+							results: [],
+						})[0],
+				}),
+			},
+		],
+	]);
 }
