@@ -1,14 +1,14 @@
 name: Build Check & Test API
 
-permissions:
-  contents: read
-
 on:
   push:
     branches-ignore:
       - main
     paths:
       - "packages/api/**"
+
+permissions:
+  contents: read
 
 jobs:
   check_changes:
