@@ -8,3 +8,9 @@ port = 3001
 
 [build]
 command = "npx @chouqueth/gleam build"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "giolt-db"
+database_id = "DB"
+migrations_dir = "./drizzle"
