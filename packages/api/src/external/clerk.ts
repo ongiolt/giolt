@@ -22,6 +22,7 @@ export async function is_authenticated(
 	return result.isSignedIn;
 }
 
+// TESTING
 export async function testing_create_token(
 	client: ClerkClient,
 ): Promise<string> {

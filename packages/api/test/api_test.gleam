@@ -12,10 +12,10 @@ pub fn main() {
 	gleeunit.main()
 }
 
-@external(javascript, "./external/test.js", "mock_request")
+@external(javascript, "./external/ffi.js", "mock_request")
 pub fn mock_request(path: String, method: http.Method, headers: Dict(String, String)) -> glen.JsRequest
 
-@external(javascript, "./external/test.js", "create_mock_env")
+@external(javascript, "./external/ffi.js", "create_mock_env")
 pub fn create_mock_env() -> Env
 
 pub fn routing_test() {

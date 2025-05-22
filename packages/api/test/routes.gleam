@@ -20,8 +20,8 @@ pub fn ping_route_test() {
 }
 
 pub fn auth_route_unauthed_test() {
-	let js_req = mock_request("/auth", http.Get, dict.new())
 	let mock_env = api_test.create_mock_env()
+	let js_req = mock_request("/auth", http.Get, dict.new())
 
 	let req = glen.convert_request(js_req)
 

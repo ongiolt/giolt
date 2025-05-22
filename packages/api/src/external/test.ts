@@ -1,9 +1,16 @@
 import path from "node:path";
 import dotenv from "dotenv";
-import { method_to_string } from "../../gleam_http/gleam/http";
-import { Ok } from "../../prelude.mjs";
+import {
+	type Method$,
+	method_to_string,
+} from "../../build/dev/javascript/gleam_http/gleam/http.mjs";
+import { Ok } from "../../build/dev/javascript/prelude.mjs";
 
-export function mock_request(path, method, headers = new Map()) {
+export function mock_request(
+	path: string,
+	method: Method$,
+	headers = new Map(),
+) {
 	const headersReq = new Headers();
 	headers.forEach((value, key) => {
 		headersReq.append(key, value);
@@ -19,6 +26,7 @@ export function create_mock_env() {
 	dotenv.config({
 		path: path.resolve(process.cwd(), ".dev.vars"),
 		override: true,
+		processEnv: process.env as Record<string, string>,
 	});
 
 	const env = new Map();
@@ -29,8 +37,8 @@ export function create_mock_env() {
 	);
 	env.set("STRIPE_SECRET_KEY", process.env.STRIPE_SECRET_KEY);
 	env.set("DB", {
-		prepare: (_sql) => ({
-			bind: (_params) => ({
+		prepare: (_sql: string) => ({
+			bind: (_params: string[]) => ({
 				run: async () =>
 					new Ok({
 						success: true,
