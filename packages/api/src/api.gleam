@@ -14,7 +14,7 @@ pub fn handler(req: request.Request(glen.RequestBody), e: Env) -> promise.Promis
 		http.Get -> case glen.path_segments(req) {
 			[] -> glen.text("OK", 200) |> promise.resolve
 			["ping"] -> ping.route()
-			["db"] -> db.route(e)
+			["db"] -> db.route(req, e)
 			_ -> not_found_route()
 		}
 
