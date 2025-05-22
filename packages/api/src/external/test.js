@@ -3,9 +3,15 @@ import dotenv from "dotenv";
 import { method_to_string } from "../../gleam_http/gleam/http";
 import { Ok } from "../../prelude.mjs";
 
-export function mock_request(path, method) {
+export function mock_request(path, method, headers = new Map()) {
+	const headersReq = new Headers();
+	headers.forEach((value, key) => {
+		headersReq.append(key, value);
+	});
+
 	return new Request(`http://localhost:3000${path}`, {
 		method: method_to_string(method),
+		headers: headersReq,
 	});
 }
 

@@ -12,7 +12,6 @@ export function create_client(
 	});
 }
 
-
 export async function is_authenticated(
 	client: ClerkClient,
 	req: Request$<conversation.RequestBody$>,
@@ -21,4 +20,16 @@ export async function is_authenticated(
 	const result = await client.authenticateRequest(jsReq);
 
 	return result.isSignedIn;
+}
+
+export async function testing_create_token(
+	client: ClerkClient,
+): Promise<string> {
+	const sess = await client.sessions.createSession({
+		userId: "user_2wrKWpu5fLQOguMKC20BnTCsa2g", // This is a test user created in the Clerk dashboard
+	});
+
+	const token = await client.sessions.getToken(sess.id, "");
+
+	return token.jwt;
 }
