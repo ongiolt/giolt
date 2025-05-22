@@ -17,13 +17,14 @@ pub fn ping_route_test() {
 	promise.resolve(res)
 }
 
-pub fn db_route_test() {
-	let js_req = mock_request("/db", http.Get)
+pub fn auth_route_test() {
+	let js_req = mock_request("/auth", http.Get)
 	let mock_env = api_test.create_mock_env()
+
 	let req = glen.convert_request(js_req)
 
 	use res <- promise.await(api.handler(req, mock_env))
-	should.equal(res.status, 404)
+	should.equal(res.status, 401)
 
 	promise.resolve(res)
 }

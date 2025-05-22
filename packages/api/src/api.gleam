@@ -6,7 +6,7 @@ import gleam/http/request
 import glen
 
 import routes/ping
-import routes/db
+import routes/auth
 
 pub fn handler(req: request.Request(glen.RequestBody), e: Env) -> promise.Promise(response.Response(glen.ResponseBody)) {
 	case req.method {
@@ -14,7 +14,7 @@ pub fn handler(req: request.Request(glen.RequestBody), e: Env) -> promise.Promis
 		http.Get -> case glen.path_segments(req) {
 			[] -> glen.text("OK", 200) |> promise.resolve
 			["ping"] -> ping.route()
-			["db"] -> db.route(req, e)
+			["auth"] -> auth.route(req, e)
 			_ -> not_found_route()
 		}
 
