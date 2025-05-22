@@ -3,7 +3,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "wrangler dev --config wrangler.dev.toml",
-		"test": "gleam build && bun run build.bun.ts && gleam test",
+		"test": "gleam build && bun run --env-file=.dev.vars build.bun.ts && gleam test",
 		"migrate:local": "drizzle-kit generate && wrangler d1 migrations apply giolt-db --local",
 		"studio": "drizzle-kit studio",
 		"visualizer": "drizzle-lab visualizer",

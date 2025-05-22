@@ -1,6 +1,6 @@
 await Bun.build({
 	entrypoints: ["./src/external/ffi.js"],
-	target: "node",
+	target: "browser",
 	outdir: "./build/dev/javascript/api/",
 	root: "./src",
 	env: "inline",

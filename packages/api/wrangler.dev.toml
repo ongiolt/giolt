@@ -7,7 +7,7 @@ compatibility_date = "2025-05-05"
 port = 3001
 
 [build]
-command = "gleam build && bun run build.bun.ts"
+command = "gleam build && bun run --env-file=.dev.vars build.bun.ts"
 
 [[d1_databases]]
 binding = "DB"
