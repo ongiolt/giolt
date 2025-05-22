@@ -1,5 +1,5 @@
 await Bun.build({
-	entrypoints: ["./src/external/ffi.js"],
+	entrypoints: ["./src/external/ffi.ts"],
 	target: "browser",
 	outdir: "./build/dev/javascript/api/",
 	root: "./src",
