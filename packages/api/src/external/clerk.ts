@@ -26,7 +26,7 @@ export async function testing_create_token(
 	client: ClerkClient,
 ): Promise<string> {
 	const sess = await client.sessions.createSession({
-		userId: "user_2wrKWpu5fLQOguMKC20BnTCsa2g", // This is a test user created in the Clerk dashboard
+		userId: "user_2xS41svYSP8AueDYMHNMhfodsWl", // This is a test user created in the Clerk dashboard
 	});
 
 	const token = await client.sessions.getToken(sess.id, "");
