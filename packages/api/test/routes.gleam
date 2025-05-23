@@ -58,7 +58,7 @@ pub fn connect_customer_route_authed_test() {
 
 	let headers = dict.new()
 	|> dict.insert("Authorization", "Bearer "<> token)
-	let js_req = mock_request("/customer-id", "POST", headers)
+	let js_req = mock_request("/connect-customer", "POST", headers)
 
 	let req = glen.convert_request(js_req)
 

@@ -7,7 +7,7 @@ import glen
 
 import routes/ping
 import routes/auth
-import routes/customer_id
+import routes/connect_customer
 
 pub fn handler(req: request.Request(glen.RequestBody), e: Env) -> promise.Promise(response.Response(glen.ResponseBody)) {
 	case req.method {
@@ -21,7 +21,7 @@ pub fn handler(req: request.Request(glen.RequestBody), e: Env) -> promise.Promis
 
 		// Post Requests
 		http.Post -> case glen.path_segments(req) {
-			["customer-id"] -> customer_id.route(req, e)
+			["connect-customer"] -> connect_customer.route(req, e)
 			_ -> not_found_route()
 		}
 
