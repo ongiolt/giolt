@@ -1,14 +1,10 @@
 import path from "node:path";
+import { Ok } from "@gleam/api/gleam.mjs";
 import dotenv from "dotenv";
-import {
-	type Method$,
-	method_to_string,
-} from "../../build/dev/javascript/gleam_http/gleam/http.mjs";
-import { Ok } from "../../build/dev/javascript/prelude.mjs";
 
 export function mock_request(
-	path: string,
-	method: Method$,
+	path: Readonly<string>,
+	method: Readonly<"GET" | "POST" | "PUT" | "DELETE">,
 	headers = new Map(),
 ) {
 	const headersReq = new Headers();
@@ -17,7 +13,7 @@ export function mock_request(
 	});
 
 	return new Request(`http://localhost:3000${path}`, {
-		method: method_to_string(method),
+		method: method,
 		headers: headersReq,
 	});
 }

@@ -1,31 +1,27 @@
-import type {
-	DB$,
-	Statement$,
-} from "../../build/dev/javascript/api/lib/db.mjs";
-import type { Env } from "../../build/dev/javascript/api/lib/env.mjs";
-import {
-	Error as Err,
-	Ok,
-	type Result,
-} from "../../build/dev/javascript/prelude.mjs";
+import { Error as Err, Ok, type Result } from "@gleam/api/gleam.mjs";
+import type { Database$, Statement$ } from "@gleam/api/lib/database.mjs";
+import type { Env } from "@gleam/api/lib/env.mjs";
 
-export function get_db(env: Env): DB$ {
+export function get_db(env: Readonly<Env>): Database$ {
 	return env.get("DB");
 }
 
-export function prepare_statement(db: DB$, sql: string): Promise<Statement$> {
+export function prepare_statement(
+	db: Readonly<Database$>,
+	sql: Readonly<string>,
+): Promise<Statement$> {
 	return db.prepare(sql);
 }
 
 export function bind_params(
-	statement: Statement$,
-	params: Map<string, string>,
+	statement: Readonly<Statement$>,
+	params: Readonly<Map<string, string>>,
 ): Promise<Statement$> {
 	return statement.bind(params);
 }
 
 export async function run_statement(
-	statement: Statement$,
+	statement: Readonly<Statement$>,
 ): Promise<Result<string, string>> {
 	return statement
 		.run()

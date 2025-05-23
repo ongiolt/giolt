@@ -1,8 +1,11 @@
+import gleam/dict
+import lib/rest
 import gleam/javascript/promise
-import glen
+import gleam/option.{Some}
 
 pub fn route() {
-	"Pong!"
-	|> glen.text(200)
+	rest.create_response(rest.Ok, Some(dict.from_list([
+		#("ping", "pong")
+	])))
 	|> promise.resolve
 }

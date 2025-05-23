@@ -17,6 +17,7 @@
         "drizzle-kit": "^0.31.1",
         "drizzle-lab": "^0.11.0",
         "drizzle-orm": "^0.43.1",
+        "stripe": "^18.1.1",
       },
       "devDependencies": {
         "dotenv": "^16.5.0",
@@ -1351,7 +1352,7 @@
 
     "strip-json-comments": ["strip-json-comments@2.0.1", "", {}, "sha512-4gB8na07fecVVkOI6Rs4e7T6NOTki5EmL7TUduTs6bu3EdnSycntVJ4re8kgZA+wx9IueI2Y11bfbgwtzuE0KQ=="],
 
-    "stripe": ["stripe@18.1.0", "", { "dependencies": { "qs": "^6.11.0" }, "peerDependencies": { "@types/node": ">=12.x.x" }, "optionalPeers": ["@types/node"] }, "sha512-MLDiniPTHqcfIT3anyBPmOEcaiDhYa7/jRaNypQ3Rt2SJnayQZBvVbFghIziUCZdltGAndm/ZxVOSw6uuSCDig=="],
+    "stripe": ["stripe@18.1.1", "", { "dependencies": { "qs": "^6.11.0" }, "peerDependencies": { "@types/node": ">=12.x.x" }, "optionalPeers": ["@types/node"] }, "sha512-hlF0ripc2nJrihpsJZQDl3xirS7tpdpS7DlmSNLEDRW8j7Qr215y5DHOI3+aEY/lq6PG8y4GR1RZPtEoIoAs/g=="],
 
     "style-to-js": ["style-to-js@1.1.16", "", { "dependencies": { "style-to-object": "1.0.8" } }, "sha512-/Q6ld50hKYPH3d/r6nr117TZkHR0w0kGGIVfpG9N6D8NymRPM9RqCUv4pRpJ62E5DqOYx2AFpbZMyCPnjQCnOw=="],
 
@@ -1580,6 +1581,8 @@
     "get-source/source-map": ["source-map@0.6.1", "", {}, "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g=="],
 
     "giolt-api/wrangler": ["wrangler@4.15.2", "", { "dependencies": { "@cloudflare/kv-asset-handler": "0.4.0", "@cloudflare/unenv-preset": "2.3.1", "blake3-wasm": "2.1.5", "esbuild": "0.25.4", "miniflare": "4.20250508.2", "path-to-regexp": "6.3.0", "unenv": "2.0.0-rc.15", "workerd": "1.20250508.0" }, "optionalDependencies": { "fsevents": "~2.3.2", "sharp": "^0.33.5" }, "peerDependencies": { "@cloudflare/workers-types": "^4.20250508.0" }, "optionalPeers": ["@cloudflare/workers-types"], "bin": { "wrangler": "bin/wrangler.js", "wrangler2": "bin/wrangler.js" } }, "sha512-Rv7zP61DOVzIS3af+/1UzJkRVpqu6VDRi6uIVMiwD1LkXG5Ov08tv94jgnE9bSjVf0paQg3dl0E89h+wQ0x/Bw=="],
+
+    "giolt-web/stripe": ["stripe@18.1.0", "", { "dependencies": { "qs": "^6.11.0" }, "peerDependencies": { "@types/node": ">=12.x.x" }, "optionalPeers": ["@types/node"] }, "sha512-MLDiniPTHqcfIT3anyBPmOEcaiDhYa7/jRaNypQ3Rt2SJnayQZBvVbFghIziUCZdltGAndm/ZxVOSw6uuSCDig=="],
 
     "hast-util-to-parse5/property-information": ["property-information@6.5.0", "", {}, "sha512-PgTgs/BlvHxOu8QuEN7wi5A0OmXaBcHpmCSTehcs6Uuu9IkDIEo13Hy7n898RHfrQ49vKCoGeWZSaAK01nwVig=="],
 

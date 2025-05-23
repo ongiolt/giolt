@@ -4,6 +4,6 @@ await Bun.build({
 	outdir: "./build/dev/javascript/api/",
 	root: "./src",
 	env: "inline",
-	minify: true,
+	minify: false,
 	throw: false,
 });
