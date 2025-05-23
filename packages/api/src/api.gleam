@@ -7,6 +7,7 @@ import glen
 
 import routes/ping
 import routes/auth
+import routes/checkout
 import routes/connect_customer
 
 pub fn handler(req: request.Request(glen.RequestBody), e: Env) -> promise.Promise(response.Response(glen.ResponseBody)) {
@@ -16,6 +17,7 @@ pub fn handler(req: request.Request(glen.RequestBody), e: Env) -> promise.Promis
 			[] -> glen.text("OK", 200) |> promise.resolve
 			["ping"] -> ping.route()
 			["auth"] -> auth.route(req, e)
+			["checkout"] -> checkout.route(req, e)
 			_ -> not_found_route()
 		}
 

@@ -12,7 +12,7 @@ pub fn route(req: request.Request(glen.RequestBody), e: Env) -> promise.Promise(
 	use is_authed <- promise.await(clerk.is_authenticated(clrk, req))
 	
 	case is_authed {
-		True ->	rest.create_response(rest.Ok, None) |> promise.resolve
-		False -> rest.create_response(rest.Unauthorized, None) |> promise.resolve
+		True ->	rest.create_response(rest.Ok, None, None) |> promise.resolve
+		False -> rest.create_response(rest.Unauthorized, None, None) |> promise.resolve
 	}
 }

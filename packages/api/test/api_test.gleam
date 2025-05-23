@@ -1,4 +1,4 @@
-import gleam/option.{Some}
+import gleam/option.{Some, None}
 import lib/rest
 import lib/database
 import gleeunit/should
@@ -32,7 +32,7 @@ pub fn routing_test() {
 pub fn responses_test() {
 	let res = rest.create_response(rest.Ok, Some(dict.from_list([
 		#("key", "value")
-	])))
+	])), None)
 
 	should.equal(res.status, 200)
 

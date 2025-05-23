@@ -3,6 +3,9 @@ compatibility_flags = ["nodejs_compat", "nodejs_compat_populate_process_env"]
 main = "build/dev/javascript/api/index.js"
 compatibility_date = "2025-05-05"
 
+[vars]
+ENVIRONMENT = "development"
+
 [dev]
 port = 3001
 

@@ -53,3 +53,29 @@ const createStripeCustomer = async (
 
 	return new Ok(customer.id);
 };
+
+export const create_checkout_session = async (
+	stripe: Readonly<Stripe>,
+	customer_id: string,
+	origin: string,
+): Promise<Result<string, string>> => {
+	try {
+		const session = await stripe.checkout.sessions.create({
+			customer: customer_id,
+			payment_method_types: ["card"],
+			line_items: [
+				{
+					price: "price_1RQTDyAkkrYozKsy3q3mHCce",
+					quantity: 1,
+				},
+			],
+			mode: "subscription",
+			success_url: `${origin}/subscribe?success=true`,
+			cancel_url: `${origin}/subscribe?success=false`,
+		});
+
+		return new Ok(session.url);
+	} catch {
+		return new Err("Failed to create checkout session");
+	}
+};

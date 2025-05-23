@@ -72,3 +72,22 @@ pub fn connect_customer_route_authed_test() {
 
 	promise.resolve(Ok(res))
 }
+
+pub fn checkout_authed_test() {
+	let mock_env = api_test.create_mock_env()
+
+	let clerk = clerk.create_client(mock_env)
+	let token = clerk.testing_create_token(clerk)
+	use token <- promise.await(token)
+
+	let headers = dict.new()
+	|> dict.insert("Authorization", "Bearer "<> token)
+	let js_req = mock_request("/checkout", "GET", headers)
+
+	let req = glen.convert_request(js_req)
+
+	use res <- promise.await(api.handler(req, mock_env))
+	should.equal(res.status, 302)
+
+	promise.resolve(Ok(res))
+}

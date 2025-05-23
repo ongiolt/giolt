@@ -12,6 +12,9 @@ fn create_client_internal(secret_key: String) -> StripeClient
 @external(javascript, "../external/ffi.js", "get_customer_id")
 pub fn get_customer_id(clerk: ClerkClient, stripe: StripeClient, req: Request(glen.RequestBody)) -> promise.Promise(Result(String, String))
 
+@external(javascript, "../external/ffi.js", "create_checkout_session")
+pub fn create_checkout_session(stripe: StripeClient, customer_id: String, origin: String) -> promise.Promise(Result(String, String))
+
 pub fn create_client(e: Env) -> StripeClient {
 	let assert Ok(api_key) = env.get_env(e, "STRIPE_SECRET_KEY")
 	create_client_internal(api_key)
