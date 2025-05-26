@@ -12,7 +12,6 @@ export const request = async (
 	path: string,
 	method: "GET" | "POST" | "PUT" | "DELETE",
 ) => {
-	
 	const res = await fetch(new URL(path, origin), {
 		method,
 		headers: {
@@ -29,6 +28,5 @@ export const request = async (
 
 	return data;
 };
-
 
 export const checkoutLink = `${origin}/checkout`;

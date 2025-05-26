@@ -30,8 +30,8 @@ export default defineConfig({
 		},
 		clearScreen: false,
 		server: {
-			strictPort: true
-		}
+			strictPort: true,
+		},
 	},
 
 	integrations: [
