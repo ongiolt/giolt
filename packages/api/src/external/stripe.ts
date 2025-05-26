@@ -70,8 +70,8 @@ export const create_checkout_session = async (
 				},
 			],
 			mode: "subscription",
-			success_url: `${origin}/subscribe?success=true`,
-			cancel_url: `${origin}/subscribe?success=false`,
+			success_url: `${origin}/dashboard?success=true`,
+			cancel_url: `${origin}/dashboard?success=false`,
 		});
 
 		return new Ok(session.url);

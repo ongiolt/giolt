@@ -14,6 +14,7 @@
 		"web:preview": "bun run --filter 'giolt-web' preview",
 		"api:dev": "bun run --filter 'giolt-api' dev",
 		"api:test": "bun run --filter 'giolt-api' test",
+		"web:api:dev": "bun run --filter 'giolt-web' dev & bun run --filter 'giolt-api' dev",
 		"db:generate": "bun run --filter 'giolt-api' generate",
 		"db:studio": "bun run --filter 'giolt-api' studio",
 		"db:visualizer": "bun run --filter 'giolt-api' visualizer",

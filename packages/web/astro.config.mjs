@@ -28,6 +28,10 @@ export default defineConfig({
 		build: {
 			sourcemap: true,
 		},
+		clearScreen: false,
+		server: {
+			strictPort: true
+		}
 	},
 
 	integrations: [

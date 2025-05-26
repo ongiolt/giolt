@@ -3,14 +3,16 @@ interface Response {
 	data: Record<string, string>;
 }
 
+export const origin = import.meta.env.DEV
+	? "http://localhost:3001"
+	: "https://api.giolt.com";
+
 export const request = async (
 	token: string,
 	path: string,
 	method: "GET" | "POST" | "PUT" | "DELETE",
 ) => {
-	const origin = import.meta.env.DEV
-		? "http://localhost:3001"
-		: "https://api.giolt.com";
+	
 	const res = await fetch(new URL(path, origin), {
 		method,
 		headers: {
@@ -27,3 +29,6 @@ export const request = async (
 
 	return data;
 };
+
+
+export const checkoutLink = `${origin}/checkout`;
