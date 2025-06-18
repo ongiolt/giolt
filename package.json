@@ -9,18 +9,6 @@
 	},
 	"private": true,
 	"scripts": {
-		"web:dev": "bun run --filter 'giolt-web' dev",
-		"web:build": "bun run --filter 'giolt-web' build",
-		"web:preview": "bun run --filter 'giolt-web' preview",
-		"api:dev": "bun run --filter 'giolt-api' dev",
-		"api:test": "bun run --filter 'giolt-api' test",
-		"web:api:dev": "bun run --filter 'giolt-web' dev & bun run --filter 'giolt-api' dev",
-		"db:generate": "bun run --filter 'giolt-api' generate",
-		"db:studio": "bun run --filter 'giolt-api' studio",
-		"db:visualizer": "bun run --filter 'giolt-api' visualizer",
-		"docs:build": "bun run --filter 'giolt-docs' build",
-		"docs:dev": "bun run --filter 'giolt-docs' dev",
-		"docs:preview": "bun run --filter 'giolt-docs' preview",
 		"check": "biome check .",
 		"check:ci": "biome ci .",
 		"check:fix": "biome check --write ."
