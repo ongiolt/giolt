@@ -6,17 +6,13 @@ interface Props {
 	logo?: boolean;
 	logoHref?: string;
 	buttons?: {
-		text: string,
-		href: string,
-		external?: boolean
-	}[]
+		text: string;
+		href: string;
+		external?: boolean;
+	}[];
 }
 
-const {
-	logo = true,
-	logoHref = "/",
-	buttons = []
-} = Astro.props;
+const { logo = true, logoHref = "/", buttons = [] } = Astro.props;
 ---
 
 <div class="navbar"></div>
