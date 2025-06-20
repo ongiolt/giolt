@@ -2,7 +2,6 @@
 	"recommendations": [
 		"biomejs.biome",
 		"astro-build.astro-vscode",
-		"bradlc.vscode-tailwindcss",
-		"gleam.gleam"
+		"bradlc.vscode-tailwindcss"
 	]
 }
