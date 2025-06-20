@@ -1,13 +1,15 @@
 ---
 import GioltIcon from "@/assets/logo.svg";
+import Wave from "@/assets/wave.svg";
 import LayoutDefault from "@/layouts/layout-default.astro";
+import Timeline from "@/components/timeline.astro";
 ---
 
 <LayoutDefault>
 	<div
 		class="container min-h-[512px] flex flex-col justify-center"
 	>
-		<div class="flex flex-row gap-1">
+		<div class="flex flex-row gap-1 mb-2">
 			<span class="badge badge-sm badge-primary">
 				<GioltIcon class="size-[1em]" />
 				Giolt
@@ -17,7 +19,7 @@ import LayoutDefault from "@/layouts/layout-default.astro";
 			</span>
 		</div>
 		<h1
-			class="font-black text-8xl"
+			class="font-black text-5xl md:text-8xl"
 		>
 			Go digital without the headaches
 		</h1>
@@ -26,5 +28,76 @@ import LayoutDefault from "@/layouts/layout-default.astro";
 		>
 			Create your online presence, without the headaches of high bills, complicated pricing and maintenance.
 		</p>
+	</div>
+
+	<Wave
+		class="*:fill-base-content w-full h-48"
+	/>
+	<div class="bg-base-content text-base-300">
+		<div class="container">
+			<h2 class="text-3xl md:text-5xl font-bold">
+				What to expect?
+			</h2>
+			<p>
+				Giolt is a project to help with the digitalization of local businesses and
+				individuals. Giolt is still very early and is not yet accessible for the public.
+				<br>
+				You can take a look at some of the features that we are working on:
+			</p>
+			<Timeline/>
+		</div>
+	</div>
+	<Wave
+		class="*:fill-base-content w-full h-48 rotate-180"
+	/>
+
+	<div class="container">
+		<h2
+			class="text-3xl md:text-5xl font-bold"
+			id="pricing"
+		>
+			Pricing
+		</h2>
+		<p>
+			Giolt is still in very early development and everything you see is subject to change.
+			Here is a preview of what the pricing will look at.
+		</p>
+		<div class="grid grid-cols-2 gap-2">
+			<div class="card glass row-span-3">
+				<div class="card-body">
+					<h2 class="card-title">
+						39&euro;/year
+					</h2>
+					<p>
+						For only 39&euro; per year, you will get the full
+						feature set of Giolt for your business, whatever
+						it might be.
+						<br><br>
+						Some other features can be purchased separately as addons.
+					</p>
+				</div>
+			</div>
+			<div class="card glass">
+				<div class="card-body">
+					<h2 class="card-title">
+						Custom domain &middot; 9&euro; one-time purchase
+					</h2>
+				</div>
+			</div>
+			<div class="card glass">
+				<div class="card-body">
+					<h2 class="card-title">
+						Remove all Giolt branding &middot; 19&euro; one-time purchase
+					</h2>
+				</div>
+			</div>
+			<div class="card glass">
+				<div class="card-body">
+					<h2 class="card-title">
+						AI Assistant &middot; 19&euro;/month
+					</h2>
+				</div>
+			</div>
+		</div>
 	</div>
 </LayoutDefault>

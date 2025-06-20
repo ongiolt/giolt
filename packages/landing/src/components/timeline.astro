@@ -1,0 +1,92 @@
+---
+import { CircleCheckIcon } from "@lucide/astro";
+
+interface TimelineItem {
+	text: string;
+	completed: boolean;
+}
+
+const TIMELINE: TimelineItem[] = [
+	{
+		text: "Customizable hosted page for businesses and individuals to publish to the entire world",
+		completed: false
+	},
+	{
+		text: "Digital menu for restaurants with a shareable link and QR code",
+		completed: false
+	},
+	{
+		text: "Song and album showcase for song artists",
+		completed: false
+	},
+	{
+		text: "Photo and art showcase for artists",
+		completed: false
+	},
+	{
+		text: "Maps location and Street View integration for business location with integrated directions for Waze, Apple Maps and Google Maps",
+		completed: false
+	},
+	{
+		text: "Podcast and episode showcase",
+		completed: false
+	},
+	{
+		text: "Managed table booking system for restaurants",
+		completed: false
+	},
+	{
+		text: "Calendar meeting booking system with integrated voice calling and calendar apps",
+		completed: false
+	},
+	{
+		text: "Products and services overview with displayed price lists",
+		completed: false
+	},
+	{
+		text: "Blogging system for individuals and businesses",
+		completed: false
+	},
+	{
+		text: "Delivery order tracking for businesses and individuals for physical products",
+		completed: false
+	},
+	{
+		text: "Ability to choose a custom domain to be exposed to the internet",
+		completed: false
+	},
+	{
+		text: "AI assistant for support requests and other questions",
+		completed: false
+	},
+];
+---
+
+<ul class="timeline timeline-vertical timeline-compact">
+	{[...TIMELINE].sort((a, b) => Number(a.completed) - Number(b.completed)).map((item,idx) => (
+		<li>
+			{idx !== 0 ?
+				<hr
+					class={TIMELINE[idx].completed ? "bg-success" : ""}
+				/>
+			: null}
+			<div class="timeline-middle">
+				<CircleCheckIcon
+					class={
+						item.completed ? "text-success" : ""
+					}
+				/>
+			</div>
+			<div
+				class="timeline-box timeline-end text-base-content"
+			>
+				{item.text}
+			</div>
+			{idx !== TIMELINE.length - 1 ?
+				<hr
+					class={TIMELINE[idx+1].completed ? "bg-success" : ""}
+				/>
+			: null}
+		</li>
+	))}
+</ul>

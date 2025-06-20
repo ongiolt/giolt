@@ -1,6 +1,8 @@
 ---
+import "@/styles/style.css";
 import "@fontsource-variable/bricolage-grotesque";
-import "giolt-shared/global.css";
+import Footer from "giolt-shared/components/footer.astro";
+import Navbar from "giolt-shared/components/navbar.astro";
 ---
 
 <html lang="en">
@@ -11,9 +13,17 @@ import "giolt-shared/global.css";
 		<meta name="generator" content={Astro.generator} />
 		<title>Giolt</title>
 	</head>
-	<body>
+	<body class="flex flex-col min-h-svh">
+		<Navbar
+			buttons={[{
+				text: "Docs",
+				href: "https://docs.giolt.com",
+				external: true
+			}]}
+		/>
 		<main>
 			<slot/>
 		</main>
+		<Footer/>
 	</body>
 </html>

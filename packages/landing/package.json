@@ -10,10 +10,11 @@
 	},
 	"dependencies": {
 		"@fontsource-variable/bricolage-grotesque": "^5.2.8",
+		"@lucide/astro": "^0.518.0",
 		"@tailwindcss/vite": "^4.1.10",
 		"astro": "^5.10.0",
 		"daisyui": "^5.0.43",
-		"tailwindcss": "^4.1.10",
-		"giolt-shared": "workspace:*"
+		"giolt-shared": "workspace:*",
+		"tailwindcss": "^4.1.10"
 	}
 }

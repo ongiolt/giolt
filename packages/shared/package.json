@@ -10,5 +10,8 @@
 	},
 	"peerDependencies": {
 		"typescript": "^5"
+	},
+	"dependencies": {
+		"astro": "^5.10.0"
 	}
 }
