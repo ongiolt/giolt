@@ -3,6 +3,10 @@ import "@/styles/style.css";
 import "@fontsource-variable/bricolage-grotesque";
 import Footer from "giolt-shared/components/footer.astro";
 import Navbar from "giolt-shared/components/navbar.astro";
+
+interface Props {
+	title?: string;
+}
 ---
 
 <html lang="en">
@@ -11,7 +15,9 @@ import Navbar from "giolt-shared/components/navbar.astro";
 		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Giolt</title>
+		<title>
+			{Astro.props.title ? `${Astro.props.title} - Giolt` : "Giolt - Hosting except the headaches"}
+		</title>
 	</head>
 	<body class="flex flex-col min-h-svh">
 		<Navbar />
