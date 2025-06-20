@@ -15,4 +15,5 @@ Giolt's codebase.
 > If your editor has support for Dev Containers, all requirements will be preinstalled inside the container.
 
 ## Packages
-* `landing` - The landing website, hosted at giolt.com. Development port is 3000
+* `landing` - The landing website, hosted at giolt.com
+* `shared` - Shared components and utilities
