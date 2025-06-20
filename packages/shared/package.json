@@ -1,0 +1,14 @@
+{
+	"name": "giolt-shared",
+	"type": "module",
+	"private": true,
+	"exports": {
+		"./*": "./src/*"
+	},
+	"devDependencies": {
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	}
+}

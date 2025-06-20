@@ -13,6 +13,7 @@
 		"@tailwindcss/vite": "^4.1.10",
 		"astro": "^5.10.0",
 		"daisyui": "^5.0.43",
-		"tailwindcss": "^4.1.10"
+		"tailwindcss": "^4.1.10",
+		"giolt-shared": "workspace:*"
 	}
 }
