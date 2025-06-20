@@ -1,7 +1,25 @@
 ---
+import GioltIcon from "@/assets/logo.svg";
 import LayoutDefault from "@/layouts/layout-default.astro";
 ---
 
 <LayoutDefault>
-
+	<div
+		class="container min-h-[512px] flex flex-col justify-center"
+	>
+		<div class="flex flex-row gap-1">
+			<span class="badge badge-sm badge-primary">
+				<GioltIcon class="size-[1em]" />
+				Giolt
+			</span>
+			<span class="badge badge-sm">
+				Alpha
+			</span>
+		</div>
+		<h1
+			class="font-black text-7xl"
+		>
+			Go digital without the headaches
+		</h1>
+	</div>
 </LayoutDefault>
