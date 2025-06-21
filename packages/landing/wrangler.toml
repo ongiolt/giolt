@@ -2,11 +2,5 @@ name = "landing"
 compatibility_date = "2025-06-21"
 pages_build_output_dir = "./dist"
 
-[assets]
-directory = "./dist"
-
-[build]
-command = "bun run build"
-
 [vars]
 BUN_VERSION = "1.2.15"
