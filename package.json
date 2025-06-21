@@ -15,5 +15,6 @@
 		"check:ci": "biome ci .",
 		"check:fix": "biome check --write ."
 	},
-	"workspaces": ["packages/*"]
+	"workspaces": ["packages/*"],
+	"trustedDependencies": ["@biomejs/biome", "@tailwindcss/oxide"]
 }
