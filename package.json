@@ -1,20 +1,26 @@
 {
-  "name": "giolt",
-  "version": "1.0.0",
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@types/bun": "latest",
-    "typescript": "^5.8.3",
-    "wrangler": "^4.14.4"
-  },
-  "private": true,
-  "scripts": {
-    "landing:dev": "bun run --filter giolt-landing dev",
-    "landing:build": "bun run --filter giolt-landing build",
-    "check": "biome check .",
-    "check:ci": "biome ci .",
-    "check:fix": "biome check --write ."
-  },
-  "workspaces": ["packages/*"],
-  "trustedDependencies": ["@biomejs/biome", "@tailwindcss/oxide", "esbuild", "sharp", "workerd"]
+	"name": "giolt",
+	"version": "1.0.0",
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/bun": "latest",
+		"typescript": "^5.8.3",
+		"wrangler": "^4.14.4"
+	},
+	"private": true,
+	"scripts": {
+		"landing:dev": "bun run --filter giolt-landing dev",
+		"landing:build": "bun run --filter giolt-landing build",
+		"check": "biome check .",
+		"check:ci": "biome ci .",
+		"check:fix": "biome check --write ."
+	},
+	"workspaces": ["packages/*"],
+	"trustedDependencies": [
+		"@biomejs/biome",
+		"@tailwindcss/oxide",
+		"esbuild",
+		"sharp",
+		"workerd"
+	]
 }
