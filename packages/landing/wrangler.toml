@@ -6,3 +6,6 @@ directory = "./dist/"
 
 [build]
 command = "bun run build"
+
+[vars]
+BUN_VERSION = "1.2.15"
