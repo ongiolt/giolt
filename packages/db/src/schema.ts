@@ -6,5 +6,5 @@ export const pages = sqliteTable("pages", {
 	name: text("name").notNull(),
 	description: text("description"),
 	avatarUrl: text("logo_url"),
-	theme: text("theme", { enum: THEMES }).notNull().default("light")
-})
+	theme: text("theme", { enum: THEMES }).notNull().default("light"),
+});
