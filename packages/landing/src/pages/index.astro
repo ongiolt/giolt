@@ -3,6 +3,7 @@ import GioltIcon from "@/assets/logo.svg";
 import Wave from "@/assets/wave.svg";
 import Timeline from "@/components/timeline.astro";
 import LayoutDefault from "@/layouts/layout-default.astro";
+import { ClipboardListIcon } from "@lucide/astro";
 ---
 
 <LayoutDefault>
@@ -24,10 +25,20 @@ import LayoutDefault from "@/layouts/layout-default.astro";
 			Go digital without the headaches
 		</h1>
 		<p
-			class="text-base-content/50"
+			class="text-base-content/50 mb-4"
 		>
 			Create your online presence, without the headaches of high bills, complicated pricing and maintenance.
 		</p>
+		<div class="flex flex-row items-center gap-4">
+			<a
+				href="https://accounts.giolt.com/waitlist"
+				target="_blank"
+				class="btn btn-primary"
+			>
+				<ClipboardListIcon/>
+				Join the waitlist
+			</a>
+		</div>
 	</div>
 
 	<Wave
