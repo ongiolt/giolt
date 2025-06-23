@@ -7,7 +7,7 @@ dist/
 .wrangler/
 .drizzle/
 .dev.vars
-.turso/
+.local.db
 *.beam
 *.ez
 build/
