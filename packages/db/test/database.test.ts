@@ -1,11 +1,11 @@
+import { beforeAll, expect, test } from "bun:test";
 import { $ } from "bun";
-import { pages } from "../src/schema";
-import { test, expect, beforeAll } from "bun:test";
 import { drizzle } from "drizzle-orm/libsql";
+import { pages } from "../src/schema";
 
 beforeAll(async () => {
-	await $`bun seed`
-})
+	await $`bun seed`;
+});
 
 const db = drizzle("file:./.local.db");
 
@@ -19,4 +19,4 @@ test("Pages table select", async () => {
 test("Pages table cols", async () => {
 	const full = await db.select().from(pages).all();
 	const res = full[0];
-})
+});
