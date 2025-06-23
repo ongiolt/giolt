@@ -16,4 +16,5 @@ Giolt's codebase.
 
 ## Packages
 * `landing` - The landing website, hosted at giolt.com
+* `db` - The database package
 * `shared` - Shared components and utilities

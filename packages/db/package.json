@@ -4,7 +4,8 @@
 	"type": "module",
 	"private": true,
 	"scripts": {
-		"visualizer": "drizzle-lab visualizer -c drizzle.local.config.ts"
+		"visualizer": "drizzle-lab visualizer -c drizzle.local.config.ts",
+		"studio": "drizzle-kit studio --config drizzle.local.config.ts"
 	},
 	"devDependencies": {
 		"@types/bun": "latest"
@@ -13,6 +14,7 @@
 		"typescript": "^5"
 	},
 	"dependencies": {
+		"@libsql/client": "^0.15.9",
 		"drizzle-kit": "^0.31.1",
 		"drizzle-lab": "^0.11.0",
 		"drizzle-orm": "^0.44.2"

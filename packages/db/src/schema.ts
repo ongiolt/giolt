@@ -1,12 +1,15 @@
 import { int, sqliteTable, text } from "drizzle-orm/sqlite-core";
-import { THEMES } from "./data";
+import { PAGE_TYPES, THEMES } from "./data";
 
 export const pages = sqliteTable("pages", {
 	id: text("id").primaryKey().unique().notNull(),
+	type: text("type", { enum: PAGE_TYPES }).notNull(),
 	name: text("name").notNull(),
 	description: text("description"),
-	avatarUrl: text("logo_url"),
-	theme: text("theme", { enum: THEMES }).notNull().default("light"),
+	content: text("content"),
+	logoId: text("logo_id"),
+	coverId: text("cover_id"),
+	theme: text("theme", { enum: THEMES }).notNull(),
 	products: int("products").references(() => products.id),
 	public: int("public", { mode: "boolean" }).notNull().default(false),
 });
@@ -15,7 +18,7 @@ export const products = sqliteTable("products", {
 	id: int("id").primaryKey().unique().notNull(),
 	name: text("name").notNull(),
 	description: text("description"),
-	imageUrl: text("image_url"),
+	imageId: text("image_id"),
 	price: int("price").notNull(),
 	checkoutLink: text("checkout_link").notNull(),
 });

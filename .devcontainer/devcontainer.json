@@ -2,5 +2,6 @@
 	"name": "Debian",
 	"build": {
 		"dockerfile": "Dockerfile"
-	}
+	},
+	"forwardPorts": [4983, 3000, 64738]
 }
