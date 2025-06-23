@@ -1,6 +1,7 @@
 ---
 import GioltIcon from "@/assets/logo.svg";
 import Wave from "@/assets/wave.svg";
+import BusinessTypesBadges from "@/components/business-types-badges.astro";
 import Timeline from "@/components/timeline.astro";
 import LayoutDefault from "@/layouts/layout-default.astro";
 import { ClipboardListIcon } from "@lucide/astro";
@@ -29,7 +30,7 @@ import { ClipboardListIcon } from "@lucide/astro";
 		>
 			Create your online presence, without the headaches of high bills, complicated pricing and maintenance.
 		</p>
-		<div class="flex flex-row items-center gap-4">
+		<div class="flex flex-row items-center gap-2">
 			<a
 				href="https://accounts.giolt.com/waitlist"
 				target="_blank"
@@ -37,6 +38,9 @@ import { ClipboardListIcon } from "@lucide/astro";
 			>
 				<ClipboardListIcon/>
 				Join the waitlist
+			</a>
+			<a href="/updates" class="btn">
+				Updates
 			</a>
 		</div>
 	</div>
@@ -46,6 +50,21 @@ import { ClipboardListIcon } from "@lucide/astro";
 	/>
 	<div class="bg-base-content text-base-300">
 		<div class="container">
+			<div class="card bg-base-200 shadow text-base-content mb-16">
+				<div class="card-body">
+					<h2
+						class="text-3xl md:text-5xl font-bold"
+						id="pricing"
+					>
+						A frontpage for your business
+					</h2>
+					<p class="mb-2">
+						Giolt will support a variable range of businesses and domains so everyone can enjoy a digital presence without hassle.
+					</p>
+					<BusinessTypesBadges/>
+				</div>
+			</div>
+
 			<h2 class="text-3xl md:text-5xl font-bold">
 				What to expect?
 			</h2>
@@ -69,7 +88,7 @@ import { ClipboardListIcon } from "@lucide/astro";
 		>
 			Pricing
 		</h2>
-		<p>
+		<p class="mb-2">
 			Giolt is still in very early development and everything you see is subject to change.
 			Here is a preview of what the pricing will look at.
 		</p>
@@ -77,10 +96,10 @@ import { ClipboardListIcon } from "@lucide/astro";
 			<div class="card glass row-span-3">
 				<div class="card-body">
 					<h2 class="card-title">
-						39&euro;/year
+						19&euro;/month
 					</h2>
 					<p>
-						For only 39&euro; per year, you will get the full
+						For only 19&euro; per month, you will get the full
 						feature set of Giolt for your business, whatever
 						it might be.
 						<br><br>

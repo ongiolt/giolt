@@ -9,9 +9,23 @@ const currentYear = new Date().getFullYear();
 	<div class="card glass mb-4">
 		<div class="card-body gap-0">
 			<p>
-				&copy; {currentYear} Functional Source License (FSL) &middot; Giolt contributors
+				Giolt &copy; {currentYear} Functional Source License (FSL) &middot; Giolt contributors
 			</p>
-			<div class="flex flex-row flex-wrap gap-8">
+			<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+				<div>
+					<h3 class="mt-3 text-xl font-bold">
+						About
+					</h3>
+					<div
+						class="text-muted-foreground *:hover:underline *:block"
+					>
+						<a
+							href="/updates"
+						>
+							Updates
+						</a>
+					</div>
+				</div>
 				<div>
 					<h3 class="mt-3 text-xl font-bold">
 						Contribute

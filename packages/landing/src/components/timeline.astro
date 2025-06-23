@@ -1,5 +1,5 @@
 ---
-import { CircleCheckIcon } from "@lucide/astro";
+import { CircleCheckIcon, CircleDotIcon } from "@lucide/astro";
 
 interface TimelineItem {
 	text: string;
@@ -71,11 +71,13 @@ const TIMELINE: TimelineItem[] = [
 				/>
 			: null}
 			<div class="timeline-middle">
-				<CircleCheckIcon
-					class={
-						item.completed ? "text-success" : ""
-					}
-				/>
+				{item.completed ?
+					<CircleCheckIcon
+						class="text-success"
+					/>
+					:
+					<CircleDotIcon />
+				}
 			</div>
 			<div
 				class="timeline-box timeline-end text-base-content"
