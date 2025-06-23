@@ -4,7 +4,7 @@ import { drizzle } from "drizzle-orm/libsql";
 import { pages } from "../src/schema";
 
 beforeAll(async () => {
-	await $`bun seed`;
+	await $`bun seed`.text();
 });
 
 const db = drizzle("file:./.local.db");

@@ -8,7 +8,7 @@
 		"studio": "drizzle-kit studio --config drizzle.local.config.ts",
 		"migrate:local": "drizzle-kit push --config drizzle.local.config.ts",
 		"seed": "bun run ./src/seed.ts",
-		"preseed": "rm .local.db && bun migrate:local"
+		"preseed": "bun migrate:local"
 	},
 	"dependencies": {
 		"@libsql/client": "^0.15.9",
