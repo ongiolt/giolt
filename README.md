@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-FSL-green)](/LICENSE.md)
 [![Build Check Landing](https://github.com/ongiolt/giolt/actions/workflows/build-check-landing.yaml/badge.svg)](https://github.com/ongiolt/giolt/actions/workflows/build-check-landing.yaml)
+[![Test Database](https://github.com/ongiolt/giolt/actions/workflows/test-database.yaml/badge.svg)](https://github.com/ongiolt/giolt/actions/workflows/test-database.yaml)
 
 ## Development Requirements
 
