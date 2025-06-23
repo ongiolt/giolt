@@ -11,6 +11,7 @@
 	"scripts": {
 		"landing:dev": "bun run --filter giolt-landing dev",
 		"landing:build": "bun run --filter giolt-landing build",
+		"db:visualizer": "bun run --filter giolt-db visualizer",
 		"check": "biome check .",
 		"check:ci": "biome ci .",
 		"check:fix": "biome check --write ."
