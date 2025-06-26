@@ -11,6 +11,8 @@
 	"scripts": {
 		"landing:dev": "bun run --filter giolt-landing dev",
 		"landing:build": "bun run --filter giolt-landing build",
+		"tenant:dev": "bun run --filter giolt-tenant dev",
+		"tenant:build": "bun run --filter giolt-tenant build",
 		"db:visualizer": "bun run --filter giolt-db visualizer",
 		"db:studio": "bun run --filter giolt-db studio",
 		"check": "biome check .",

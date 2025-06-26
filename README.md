@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-FSL-green)](/LICENSE.md)
 [![Build Check Landing](https://github.com/ongiolt/giolt/actions/workflows/build-check-landing.yaml/badge.svg)](https://github.com/ongiolt/giolt/actions/workflows/build-check-landing.yaml)
+[![Build Check Tenant](https://github.com/ongiolt/giolt/actions/workflows/build-check-tenant.yaml/badge.svg)](https://github.com/ongiolt/giolt/actions/workflows/build-check-tenant.yaml)
 [![Test Database](https://github.com/ongiolt/giolt/actions/workflows/test-database.yaml/badge.svg)](https://github.com/ongiolt/giolt/actions/workflows/test-database.yaml)
 
 ## Development Requirements
@@ -17,5 +18,6 @@ Giolt's codebase.
 
 ## Packages
 * `landing` - The landing website, hosted at giolt.com
+* `tenant` - The tenant system for displaying pages
 * `db` - The database package
 * `shared` - Shared components and utilities
