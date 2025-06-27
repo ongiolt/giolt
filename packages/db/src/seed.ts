@@ -1,6 +1,6 @@
 import { drizzle } from "drizzle-orm/libsql";
 import { seed } from "drizzle-seed";
-import { PAGE_TYPES, THEMES } from "./data";
+import { PAGE_TYPES, THEMES } from "giolt-shared/data.ts";
 import * as schema from "./schema";
 
 interface Refine {

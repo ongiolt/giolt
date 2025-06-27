@@ -9,10 +9,12 @@
 		"astro": "astro"
 	},
 	"dependencies": {
+		"@astrojs/cloudflare": "^12.6.0",
 		"@libsql/client": "^0.15.9",
 		"@tailwindcss/vite": "^4.1.11",
 		"astro": "^5.10.1",
 		"drizzle-orm": "^0.44.2",
+		"giolt-db": "workspace:*",
 		"giolt-shared": "workspace:*",
 		"tailwindcss": "^4.1.11"
 	}

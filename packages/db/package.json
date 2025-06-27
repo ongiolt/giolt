@@ -10,6 +10,9 @@
 		"seed": "bun run ./src/seed.ts",
 		"preseed": "bun migrate:local"
 	},
+	"exports": {
+		"./*": "./src/*"
+	},
 	"dependencies": {
 		"@libsql/client": "^0.15.9",
 		"@types/bun": "latest",

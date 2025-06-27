@@ -1,5 +1,5 @@
 import { int, sqliteTable, text } from "drizzle-orm/sqlite-core";
-import { PAGE_TYPES, THEMES } from "./data";
+import { PAGE_TYPES, THEMES } from "giolt-shared/data.ts";
 
 export const pages = sqliteTable("pages", {
 	id: text("id").primaryKey().unique().notNull(),
@@ -13,6 +13,8 @@ export const pages = sqliteTable("pages", {
 	products: int("products").references(() => products.id),
 	public: int("public", { mode: "boolean" }).notNull().default(false),
 });
+
+export type SelectPages = typeof pages.$inferSelect;
 
 export const products = sqliteTable("products", {
 	id: int("id").primaryKey().unique().notNull(),

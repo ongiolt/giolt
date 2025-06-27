@@ -1,0 +1,12 @@
+---
+import Layout from "@/layouts/layout.astro";
+import type { SelectPages } from "giolt-db/schema.ts";
+
+interface Props extends SelectPages {}
+
+const page = Astro.props;
+---
+
+<Layout title={page.name} theme={page.theme}>
+
+</Layout>
