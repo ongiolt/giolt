@@ -1,0 +1,19 @@
+---
+interface Props {
+	logoId: string | null;
+	name: string;
+}
+
+const { logoId, name } = Astro.props;
+---
+
+<div
+	class="bg-base-200 rounded-full overflow-hidden w-32 h-32 min-h-32 min-w-32"
+>
+	<img
+		class="object-cover text-base-200"
+		width="100%"
+		height="100%"
+		alt={name}
+	/>
+</div>
