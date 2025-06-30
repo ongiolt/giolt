@@ -1,6 +1,6 @@
 ---
-import Cover from "@/components/tenant/cover.astro";
-import Icon from "@/components/tenant/icon.astro";
+import Cover from "@/components/cover.astro";
+import Icon from "@/components/icon.astro";
 import Layout from "@/layouts/layout.astro";
 import type { SelectPages } from "giolt-db/schema.ts";
 
@@ -28,5 +28,16 @@ const page = Astro.props;
 				{page.name}
 			</h1>
 		</div>
+
+		<p>
+			{page.description ?? ""}
+		</p>
+
+		<!-- Render this in markdown -->
+		{page.content ? (
+			<div class="prose">
+				{page.content}
+			</div>
+		) : null}
 	</div>
 </Layout>
