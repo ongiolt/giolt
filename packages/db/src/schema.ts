@@ -1,5 +1,5 @@
 import { int, sqliteTable, text } from "drizzle-orm/sqlite-core";
-import { PAGE_TYPES, THEMES } from "giolt-shared/data.ts";
+import { CURRENCIES, PAGE_TYPES, THEMES } from "giolt-shared/data.ts";
 
 export const pages = sqliteTable("pages", {
 	id: text("id").primaryKey().unique().notNull(),
@@ -10,7 +10,6 @@ export const pages = sqliteTable("pages", {
 	logoId: text("logo_id"),
 	coverId: text("cover_id"),
 	theme: text("theme", { enum: THEMES }).notNull(),
-	products: int("products").references(() => products.id),
 	public: int("public", { mode: "boolean" }).notNull().default(false),
 });
 
@@ -18,9 +17,13 @@ export type SelectPages = typeof pages.$inferSelect;
 
 export const products = sqliteTable("products", {
 	id: int("id").primaryKey().unique().notNull(),
+	pageId: text("page_id")
+		.references(() => pages.id)
+		.notNull(),
 	name: text("name").notNull(),
 	description: text("description"),
 	imageId: text("image_id"),
 	price: int("price").notNull(),
+	priceCurrency: text("price_currency", { enum: CURRENCIES }).notNull(),
 	checkoutLink: text("checkout_link").notNull(),
 });

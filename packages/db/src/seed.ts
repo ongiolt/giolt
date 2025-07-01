@@ -1,6 +1,6 @@
 import { drizzle } from "drizzle-orm/libsql";
 import { seed } from "drizzle-seed";
-import { PAGE_TYPES, THEMES } from "giolt-shared/data.ts";
+import { CURRENCIES, PAGE_TYPES, THEMES } from "giolt-shared/data.ts";
 import * as schema from "./schema";
 
 interface Refine {
@@ -32,8 +32,8 @@ async function main() {
 							values: PAGE_TYPES as unknown as string[],
 						}),
 						name: f.companyName(),
-						description: f.loremIpsum(),
-						content: f.loremIpsum(),
+						description: f.loremIpsum({ sentencesCount: 5 }),
+						content: f.loremIpsum({ sentencesCount: 10 }),
 						logoId: f.string(),
 						coverId: f.string(),
 						theme: f.valuesFromArray({
@@ -47,12 +47,15 @@ async function main() {
 					columns: {
 						id: f.intPrimaryKey(),
 						checkoutLink: f.string(),
-						description: f.loremIpsum(),
+						description: f.loremIpsum({ sentencesCount: 5 }),
 						imageId: f.string(),
 						name: f.firstName(),
 						price: f.int({ minValue: 1, maxValue: 100 }),
+						priceCurrency: f.valuesFromArray({
+							values: CURRENCIES as unknown as string[],
+						}),
 					},
-					count: 5,
+					count: 5 * 5, // 5 pages * 5 products per page
 				},
 			}) satisfies Refine,
 	);
