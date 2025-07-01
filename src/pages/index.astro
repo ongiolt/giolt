@@ -1,0 +1,133 @@
+---
+import GioltIcon from "@/assets/logo.svg";
+import Wave from "@/assets/wave.svg";
+import BusinessTypesBadges from "@/components/business-types-badges.astro";
+import Timeline from "@/components/timeline.astro";
+import LayoutDefault from "@/layouts/landing.astro";
+import { ClipboardListIcon } from "@lucide/astro";
+---
+
+<LayoutDefault>
+	<div
+		class="container min-h-[512px] flex flex-col justify-center"
+	>
+		<div class="flex flex-row gap-1 mb-2">
+			<span class="badge badge-primary">
+				<GioltIcon class="size-[1.25em]" />
+				Giolt
+			</span>
+			<span class="badge">
+				Alpha
+			</span>
+		</div>
+		<h1
+			class="font-black text-5xl md:text-8xl"
+		>
+			Go digital without the headaches
+		</h1>
+		<p
+			class="text-base-content/50 mb-4"
+		>
+			Create your online presence, without the headaches of high bills, complicated pricing and maintenance.
+		</p>
+		<div class="flex flex-row items-center gap-2">
+			<a
+				href="https://accounts.giolt.com/waitlist"
+				target="_blank"
+				class="btn btn-primary"
+			>
+				<ClipboardListIcon/>
+				Join the waitlist
+			</a>
+			<a href="/updates" class="btn">
+				Updates
+			</a>
+		</div>
+	</div>
+
+	<Wave
+		class="*:fill-base-content w-full h-48"
+	/>
+	<div class="bg-base-content text-base-300">
+		<div class="container">
+			<div class="card bg-base-200 shadow text-base-content mb-16">
+				<div class="card-body">
+					<h2
+						class="text-3xl md:text-5xl font-bold"
+						id="pricing"
+					>
+						A frontpage for your business
+					</h2>
+					<p class="mb-2">
+						Giolt will support a variable range of businesses and domains so everyone can enjoy a digital presence without hassle.
+					</p>
+					<BusinessTypesBadges/>
+				</div>
+			</div>
+
+			<h2 class="text-3xl md:text-5xl font-bold">
+				What to expect?
+			</h2>
+			<p>
+				Giolt is a project to help with the digitalization of local businesses and
+				individuals. Giolt is still very early and is not yet accessible for the public.
+				<br>
+				You can take a look at some of the features that we are working on:
+			</p>
+			<Timeline/>
+		</div>
+	</div>
+	<Wave
+		class="*:fill-base-content w-full h-48 rotate-180"
+	/>
+
+	<div class="container">
+		<h2
+			class="text-3xl md:text-5xl font-bold"
+			id="pricing"
+		>
+			Pricing
+		</h2>
+		<p class="mb-2">
+			Giolt is still in very early development and everything you see is subject to change.
+			Here is a preview of what the pricing will look at.
+		</p>
+		<div class="grid grid-cols-2 gap-2">
+			<div class="card glass row-span-3">
+				<div class="card-body">
+					<h2 class="card-title">
+						19&euro;/month
+					</h2>
+					<p>
+						For only 19&euro; per month, you will get the full
+						feature set of Giolt for your business, whatever
+						it might be.
+						<br><br>
+						Some other features can be purchased separately as addons.
+					</p>
+				</div>
+			</div>
+			<div class="card glass">
+				<div class="card-body">
+					<h2 class="card-title">
+						Custom domain &middot; 9&euro; one-time purchase
+					</h2>
+				</div>
+			</div>
+			<div class="card glass">
+				<div class="card-body">
+					<h2 class="card-title">
+						Remove all Giolt branding &middot; 19&euro; one-time purchase
+					</h2>
+				</div>
+			</div>
+			<div class="card glass">
+				<div class="card-body">
+					<h2 class="card-title">
+						AI Assistant &middot; 19&euro;/month
+					</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+</LayoutDefault>

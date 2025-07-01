@@ -1,21 +1,17 @@
 {
 	"name": "giolt",
 	"version": "1.0.0",
-	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
-		"@types/bun": "latest",
-		"typescript": "^5.8.3",
-		"wrangler": "^4.14.4"
-	},
 	"private": true,
 	"scripts": {
-		"landing:dev": "bun run --filter giolt-landing dev",
-		"landing:build": "bun run --filter giolt-landing build",
-		"tenant:dev": "bun run --filter giolt-tenant dev",
-		"tenant:build": "bun run --filter giolt-tenant build",
-		"db:visualizer": "bun run --filter giolt-db visualizer",
-		"db:studio": "bun run --filter giolt-db studio",
-		"db:seed": "bun run --filter giolt-db seed",
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"visualizer": "drizzle-lab visualizer -c drizzle.local.config.ts",
+		"studio": "drizzle-kit studio --config drizzle.local.config.ts",
+		"migrate:local": "drizzle-kit push --config drizzle.local.config.ts",
+		"seed": "bun run ./src/db/seed.ts",
+		"preseed": "bun migrate:local",
 		"check": "biome check .",
 		"check:ci": "biome ci .",
 		"check:fix": "biome check --write ."
@@ -27,5 +23,25 @@
 		"sharp",
 		"workerd"
 	],
-	"workspaces": ["packages/*"]
+	"dependencies": {
+		"@astrojs/cloudflare": "^12.6.0",
+		"@fontsource-variable/bricolage-grotesque": "^5.2.8",
+		"@libsql/client": "^0.15.9",
+		"@lucide/astro": "^0.525.0",
+		"@tailwindcss/typography": "^0.5.16",
+		"@tailwindcss/vite": "^4.1.11",
+		"astro": "^5.10.1",
+		"daisyui": "^5.0.43",
+		"drizzle-kit": "^0.31.4",
+		"drizzle-lab": "^0.11.0",
+		"drizzle-orm": "^0.44.2",
+		"drizzle-seed": "^0.3.1",
+		"tailwindcss": "^4.1.11"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/bun": "^1.2.17",
+		"typescript": "^5.8.3",
+		"wrangler": "^4.14.4"
+	}
 }

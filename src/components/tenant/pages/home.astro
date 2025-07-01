@@ -1,0 +1,43 @@
+---
+import Cover from "@/components/tenant/cover.astro";
+import Icon from "@/components/tenant/icon.astro";
+import type { SelectPages } from "@/db/schema";
+import Layout from "@/layouts/tenant.astro";
+
+interface Props extends SelectPages {}
+
+const page = Astro.props;
+---
+
+<Layout 
+	title={page.name} 
+	theme={page.theme}
+>
+	<Cover coverId={page.coverId}/>
+	<div class="container">
+		<div
+			class:list={["flex flex-row items-center gap-4", page.coverId ? "-mt-8" : ""]}
+		>
+			<Icon
+				logoId={page.logoId}
+				name={page.name}
+			/>
+			<h1
+				class="text-5xl md:text-7xl font-bold"
+			>
+				{page.name}
+			</h1>
+		</div>
+
+		<p>
+			{page.description ?? ""}
+		</p>
+
+		<!-- Render this in markdown -->
+		{page.content ? (
+			<div class="prose">
+				{page.content}
+			</div>
+		) : null}
+	</div>
+</Layout>

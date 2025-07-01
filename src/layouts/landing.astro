@@ -1,0 +1,30 @@
+---
+import "@/styles/global.css";
+import "@fontsource-variable/bricolage-grotesque";
+import Footer from "@/components/footer.astro";
+import Navbar from "@/components/navbar.astro";
+
+interface Props {
+	title?: string;
+	class?: string;
+}
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>
+			{Astro.props.title ? `${Astro.props.title} - Giolt` : "Giolt - Go digital without the headaches"}
+		</title>
+	</head>
+	<body class="flex flex-col min-h-svh">
+		<Navbar />
+		<main class:list={["flex-1", Astro.props.class]}>
+			<slot/>
+		</main>
+		<Footer/>
+	</body>
+</html>

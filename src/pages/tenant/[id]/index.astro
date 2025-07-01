@@ -1,0 +1,24 @@
+---
+import Home from "@/components/tenant/pages/home.astro";
+import { pages } from "@/db/schema.ts";
+import { db } from "@/lib/db.ts";
+import { eq } from "drizzle-orm";
+
+export const prerender = false;
+
+const { id } = Astro.params;
+
+if (!id) {
+	return new Response("Not Found", { status: 404 });
+}
+
+const page = await db.select().from(pages).where(eq(pages.id, id)).get();
+
+if (!page || !page.public) {
+	return new Response("Not Found", { status: 404 });
+}
+---
+
+<Home
+	{...page}
+/>

@@ -1,4 +1,4 @@
-name: Test Database
+name: Build Check
 
 on:
   push:
@@ -21,5 +21,5 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      - name: Run test
-        run: bun test
+      - name: Run build
+        run: bun run build
