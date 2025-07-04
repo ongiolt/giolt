@@ -1,16 +1,15 @@
 import { beforeAll, expect, test } from "bun:test";
 import { pages } from "@/db/schema";
 import { $ } from "bun";
-import { drizzle, type LibSQLDatabase } from "drizzle-orm/libsql";
+import { type LibSQLDatabase, drizzle } from "drizzle-orm/libsql";
 
 let db: LibSQLDatabase;
 
 beforeAll(async () => {
 	await $`bun seed`.text();
-	
+
 	db = drizzle("file:./.local.db");
 });
-
 
 test("Pages table select", async () => {
 	const res = await db.select().from(pages).all();
