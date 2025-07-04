@@ -1,8 +1,8 @@
 # [Giolt](https://giolt.com)
 
 [![License](https://img.shields.io/badge/license-FSL-green)](/LICENSE.md)
-[![Build Check Landing](https://github.com/ongiolt/giolt/actions/workflows/build-check-landing.yaml/badge.svg)](https://github.com/ongiolt/giolt/actions/workflows/build-check-landing.yaml)
-[![Build Check Tenant](https://github.com/ongiolt/giolt/actions/workflows/build-check-tenant.yaml/badge.svg)](https://github.com/ongiolt/giolt/actions/workflows/build-check-tenant.yaml)
+[![Build Check](https://github.com/ongiolt/giolt/actions/workflows/build-check.yaml/badge.svg)](https://github.com/ongiolt/giolt/actions/workflows/build-check.yaml)
+[![Code Quality](https://github.com/ongiolt/giolt/actions/workflows/code-quality.yaml/badge.svg)](https://github.com/ongiolt/giolt/actions/workflows/code-quality.yaml)
 [![Test Database](https://github.com/ongiolt/giolt/actions/workflows/test-database.yaml/badge.svg)](https://github.com/ongiolt/giolt/actions/workflows/test-database.yaml)
 
 ## Development Requirements
@@ -15,9 +15,3 @@ Giolt's codebase.
 
 > [!NOTE]
 > If your editor has support for Dev Containers, all requirements will be preinstalled inside the container.
-
-## Packages
-* `landing` - The landing website, hosted at giolt.com
-* `tenant` - The tenant system for displaying pages
-* `db` - The database package
-* `shared` - Shared components and utilities
