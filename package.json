@@ -11,7 +11,7 @@
 		"studio": "drizzle-kit studio --config drizzle.local.config.ts",
 		"migrate:local": "drizzle-kit push --config drizzle.local.config.ts",
 		"seed": "bun run ./src/db/seed.ts",
-		"preseed": "rm .local.db && bun migrate:local",
+		"preseed": "rm -f .local.db && bun migrate:local",
 		"check": "biome check .",
 		"check:ci": "biome ci .",
 		"check:fix": "biome check --write ."
