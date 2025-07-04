@@ -9,6 +9,7 @@ export const pages = sqliteTable("pages", {
 	content: text("content"),
 	logoId: text("logo_id"),
 	coverId: text("cover_id"),
+	location: text("location"),
 	theme: text("theme", { enum: THEMES }).notNull(),
 	public: int("public", { mode: "boolean" }).notNull().default(false),
 });
@@ -27,3 +28,5 @@ export const products = sqliteTable("products", {
 	priceCurrency: text("price_currency", { enum: CURRENCIES }).notNull(),
 	checkoutLink: text("checkout_link").notNull(),
 });
+
+export type SelectProducts = typeof products.$inferSelect;

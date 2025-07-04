@@ -36,6 +36,7 @@ async function main() {
 						content: f.loremIpsum({ sentencesCount: 10 }),
 						logoId: f.string(),
 						coverId: f.string(),
+						location: f.streetAddress(),
 						theme: f.valuesFromArray({
 							values: THEMES as unknown as string[],
 						}),

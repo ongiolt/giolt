@@ -1,0 +1,43 @@
+---
+import { getAppleMapsUrl, getGoogleMapsUrl, getWazeUrl } from "@/db/maps";
+
+interface Props {
+	location: string;
+}
+
+const wazeUrl = getWazeUrl(Astro.props.location);
+const googleMapsUrl = getGoogleMapsUrl(Astro.props.location);
+const appleMapsUrl = getAppleMapsUrl(Astro.props.location);
+---
+
+<div class="card bg-base-200">
+	<div class="card-body">
+		<div class="w-full h-96 bg-base-300">EMBEDED MAPS</div>
+		<div class="card-actions">
+			<a
+				class="btn"
+				href={wazeUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Open in Waze
+			</a>
+			<a
+				class="btn"
+				href={googleMapsUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Open in Google Maps
+			</a>
+			<a
+				class="btn"
+				href={appleMapsUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Open in Apple Maps
+			</a>
+		</div>
+	</div>
+</div>

@@ -3,10 +3,15 @@ import Cover from "@/components/tenant/cover.astro";
 import Icon from "@/components/tenant/icon.astro";
 import type { SelectPages } from "@/db/schema";
 import Layout from "@/layouts/tenant.astro";
+import * as marked from "marked";
+import Navigate from "../navigate.astro";
 
 interface Props extends SelectPages {}
 
 const page = Astro.props;
+
+const mdContent = await marked.parse(page.content ?? "");
+page.content = mdContent;
 ---
 
 <Layout 
@@ -29,15 +34,28 @@ const page = Astro.props;
 			</h1>
 		</div>
 
-		<p>
+		<div>
+			{page.location ? (
+				<p class="text-base-content/70">
+					{page.location}
+				</p>
+			) : null}
+		</div>
+
+		<p class="mb-4">
 			{page.description ?? ""}
 		</p>
 
 		<!-- Render this in markdown -->
 		{page.content ? (
-			<div class="prose">
-				{page.content}
+			<div class="prose max-w-none mb-4" set:html={page.content}>
 			</div>
 		) : null}
+
+		{page.location ?
+			<Navigate
+				location={page.location}
+			/>
+		: null}
 	</div>
 </Layout>

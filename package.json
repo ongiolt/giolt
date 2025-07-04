@@ -11,7 +11,7 @@
 		"studio": "drizzle-kit studio --config drizzle.local.config.ts",
 		"migrate:local": "drizzle-kit push --config drizzle.local.config.ts",
 		"seed": "bun run ./src/db/seed.ts",
-		"preseed": "bun migrate:local",
+		"preseed": "rm .local.db && bun migrate:local",
 		"check": "biome check .",
 		"check:ci": "biome ci .",
 		"check:fix": "biome check --write ."
@@ -30,12 +30,13 @@
 		"@lucide/astro": "^0.525.0",
 		"@tailwindcss/typography": "^0.5.16",
 		"@tailwindcss/vite": "^4.1.11",
-		"astro": "^5.10.1",
+		"astro": "5.11.0",
 		"daisyui": "^5.0.43",
 		"drizzle-kit": "^0.31.4",
 		"drizzle-lab": "^0.11.0",
 		"drizzle-orm": "^0.44.2",
 		"drizzle-seed": "^0.3.1",
+		"marked": "^16.0.0",
 		"tailwindcss": "^4.1.11"
 	},
 	"devDependencies": {
